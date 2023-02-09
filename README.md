@@ -1,4 +1,4 @@
-# KingsHie
+# KingsHire
 Enhancing the Group £ economy
 
 ## Available Scripts
