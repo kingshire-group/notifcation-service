@@ -42,6 +42,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 1rem .5rem;
     border: .1rem solid gray;
     margin: .5rem 0;
+    font-size: ${theme.fontSizes.mobile};
 
     :focus{
       border-color: ${theme.colors.blue};

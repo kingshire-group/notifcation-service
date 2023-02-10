@@ -3,7 +3,7 @@ const margiOnLeftAndRight = "1.5rem"
 export const theme = {
   fontSizes: {
     main: "1.3rem",
-    mobile: "1.3rem",
+    mobile: "1.4rem",
     button: '1.5rem'
   },
   colors: {
