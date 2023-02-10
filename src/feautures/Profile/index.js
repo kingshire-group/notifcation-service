@@ -70,7 +70,7 @@ const Profile = ({height}) => {
           <div className='services'>
             <ul>{services}</ul>
           </div>
-          <SubmitButton backgroundColor={theme.colors.themeGreen}>Book</SubmitButton>
+          <SubmitButton backgroundColor={theme.colors.success}>Book</SubmitButton>
         </div>
       </StyledProfileUpperSection>
       <StyledProfileLowerSection >

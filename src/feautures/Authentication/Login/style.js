@@ -40,5 +40,5 @@ export const StyledLoginForm = styled.form`
 
 export const StyledLink = styled(Link)`
   font-weight: bold;
-  color: ${props => props.theme.colors.themeBlue};
+  color: ${props => props.theme.colors.blue};
 `

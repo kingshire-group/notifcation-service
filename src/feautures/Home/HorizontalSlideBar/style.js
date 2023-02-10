@@ -25,7 +25,7 @@ export const StyledHorizontalSlideWrapper = styled.div`
   & li{
     white-space: nowrap;
     font-size: ${props => props.theme.fontSizes.main};
-    color: ${ props => props.theme.colors.themeBackgroundColor };
+    color: ${ props => props.theme.colors.backgroundMagniola };
   }
 `
 
@@ -35,5 +35,5 @@ export const StyledHorizontalSlideContainer = styled.div`
 
 /*** Job Title Bar ***/
 export const StyledJobTitleBar = styled.div`
-  background-color: ${ props => props.theme.colors.themeBlue };
+  background-color: ${ props => props.theme.colors.blue };
 `

@@ -44,7 +44,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: .5rem 0;
 
     :focus{
-      border-color: ${theme.colors.themeBlue};
+      border-color: ${theme.colors.blue};
       outline: none;
     }
   }
@@ -102,7 +102,7 @@ export const Button = styled.button`
   cursor: pointer;
   background-color: ${props => props.backgroundColor};
   border: .1rem solid ${props => props.backgroundColor};
-  color: ${props => props.theme.colors.themeBackgroundColor};
+  color: ${props => props.theme.colors.backgroundMagniola};
   text-align: center;
   text-transform: none;
   transition: all 80ms ease-in-out;
@@ -127,15 +127,15 @@ export const BookButton = styled(Button)`
   padding: 1rem 0;
 `
 export const SubmitButton = styled(Button)`
-  background-color: ${props => props.theme.colors.themeBlue};
-  border: .1rem solid ${props => props.theme.colors.themeBlue};
+  background-color: ${props => props.theme.colors.blue};
+  border: .1rem solid ${props => props.theme.colors.blue};
   color: white;
   width: 100%;
   border-radius: 2rem;
 `
 
 export const StyledLink = styled(Link)`
-  color: ${props => props.theme.colors.themeBlue};
+  color: ${props => props.theme.colors.blue};
 `
 
 export const slideFromLeft = keyframes`

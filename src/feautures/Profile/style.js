@@ -7,7 +7,7 @@ export const StyledProfileContainer = styled.div`
 `
 
 export const StyledProfileUpperSection = styled.section`
-  background-color: ${props => props.theme.colors.themeBackgroundColor};
+  background-color: ${props => props.theme.colors.backgroundMagniola};
 
   & .upper-section-wrapper{
     height: 100%;
@@ -46,7 +46,7 @@ export const StyledProfileUpperSection = styled.section`
       display: flex;
       margin: 2rem 0;
       padding: .75rem 2rem;
-      border-left: .25rem solid ${props => props.theme.colors.themeGreen};
+      border-left: .25rem solid ${props => props.theme.colors.success};
     }
 
     & .personal-information{
@@ -95,10 +95,10 @@ export const StyledPersonalImageContainer = styled.div`
 `
 
 export const StyledProfileLowerSection = styled.section`
-  background-color: ${props => props.theme.colors.themeRed};
+  background-color: ${props => props.theme.colors.backgroundRed};
 
   & .lower-section-wrapper{
-    background-color: ${props => props.theme.colors.themeBackgroundColor};
+    background-color: ${props => props.theme.colors.backgroundMagniola};
     height: 100%;
     border-bottom-left-radius: ${profileContainerBorderRadius}rem;
     border-bottom-right-radius: ${profileContainerBorderRadius}rem;
@@ -128,7 +128,7 @@ export const StyledKinglancerProfile = styled.div`
     & .faIcon{
       margin-right: 1rem;
       font-size: 2rem;
-      color: ${props => props.theme.colors.themeRed};;
+      color: ${props => props.theme.colors.backgroundRed};;
     }
 
     & p, span{
@@ -203,7 +203,7 @@ export const StyledClientProfileContainer = styled.div`
 
     & .visible-status{
       position: relative;
-      background-color: ${props => props.theme.colors.themeBlue};;
+      background-color: ${props => props.theme.colors.blue};
       border: none;
       color: white;
       width: 100%;
@@ -252,9 +252,7 @@ export const StyledListOfBookings = styled.div`
 
 export const StyledSingleBooking = styled.div`
   border-radius: 1rem;
-  background-color: white;//${props => props.theme.colors.themeGreen};
-  //border: .1rem solid ${props => props.theme.colors.themeGreen};
-  //box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin-bottom: 1rem;
 
@@ -271,7 +269,7 @@ export const StyledSingleBooking = styled.div`
     grid-template-columns: 65% 35%;
     
     span{
-      color: ${props => props.theme.colors.themeRed};
+      color: ${props => props.theme.colors.backgroundRed};
       font-weight: bold;
     }
   }
@@ -290,7 +288,7 @@ export const StyledSingleBooking = styled.div`
 
     & button{
       color: white;
-      background-color: ${props => props.theme.colors.themeRed};
+      background-color: ${props => props.theme.colors.backgroundRed};
     }
   }
 `

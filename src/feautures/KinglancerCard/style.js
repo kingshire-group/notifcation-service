@@ -43,7 +43,7 @@ export const KinglancerCardDetails = styled.section`
 
     & span{
         opacity: 1;
-        color: ${props => props.theme.colors.themeRed};
+        color: ${props => props.theme.colors.backgroundRed};
       }
   }
 `

@@ -15,7 +15,7 @@ const SignupLayout = () => {
 
   useEffect(() => {
     const newBackgroundColor = 
-      window.location.pathname !== completedPagePath ? 'white' : `${theme.colors.themeGreen}`
+      window.location.pathname !== completedPagePath ? 'white' : `${theme.colors.success}`
       setWrapperBackgroundColor(newBackgroundColor);
   }, [location]);
 

@@ -4,7 +4,7 @@ export const StyledSingUpContainer = styled.div`
   display: flex;
   flex-flow: column;
   height: calc(${props => props.height}px - ${props => props.theme.heights.header});
-  background-color: ${props => props.theme.colors.themeRed};
+  background-color: ${props => props.theme.colors.backgroundRed};
   & .signup-wrapper{
     margin: auto;
     width: 90%;
@@ -45,8 +45,8 @@ export const StyledSignupIntro = styled.div`
       align-items: center;
       width: 100%;
       color: white;
-      border-color: ${props => props.theme.colors.themeBackgroundColor};
-      background-color: ${props => props.theme.colors.themeRed};
+      border-color: ${props => props.theme.colors.backgroundMagniola};
+      background-color: ${props => props.theme.colors.backgroundRed};
       border-radius: 2rem;
     }
   } 
@@ -68,7 +68,7 @@ export const StyledGoogleAuthError = styled.span`
 `
 
 export const StyledSignupCompletion = styled.div`
-  background-color: ${props => props.theme.colors.themeGreen};
+  background-color: ${props => props.theme.colors.success};
   color: white;
 
   & .welcome-message{
@@ -93,7 +93,7 @@ export const StyledSignupCompletion = styled.div`
     height: 6rem;
     width: 6rem;
     background-color: white;
-    background-color: ${props => props.theme.colors.themeGreen};
+    background-color: ${props => props.theme.colors.success};
   }
 
   & .next-step{
@@ -102,12 +102,12 @@ export const StyledSignupCompletion = styled.div`
     justify-content: space-around;
 
     & button{
-      border-color: ${props => props.theme.colors.themeBlue};
-      background-color: ${props => props.theme.colors.themeBlue};
+      border-color: ${props => props.theme.colors.blue};
+      background-color: ${props => props.theme.colors.blue};
 
       :first-child{
         background-color: white;
-        color: ${props => props.theme.colors.themeBlue};
+        color: ${props => props.theme.colors.blue};
       }
     }
   }

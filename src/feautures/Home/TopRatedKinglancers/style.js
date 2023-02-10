@@ -18,7 +18,7 @@ export const StyledTopRatedContainer = styled.div`
     }
 
     & span{
-        color: ${props => props.theme.colors.themeBlue};
+        color: ${props => props.theme.colors.blue};
         font-weight: 600;
     }
   }

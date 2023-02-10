@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { slideFromLeft, slideFromRight } from "../../../app/GlobalStyles.style";
 
 export const StyledSiteIntroduction = styled.div`
-  background-color: ${ props => props.theme.colors.themeBackgroundColor };
+  background-color: ${ props => props.theme.colors.backgroundMagniola };
 `
 
 export const StyledSearchInformationTop = styled.div`
@@ -60,6 +60,11 @@ export const StyledBookingStepsContent = styled.div`
   & .animatedTitle{
     animation: ${slideFromLeft} 3s;
   }
+`
+
+export const StyledSVGContainer = styled.svg`
+  display: block;
+  width: calc(110% + 1.5rem);
 `
 
 export const StyledHiringSteps = styled.div`

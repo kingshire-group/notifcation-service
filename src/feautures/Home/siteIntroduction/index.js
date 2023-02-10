@@ -1,25 +1,35 @@
 import { SiteIntroductionSVGData } from "../../../data/SVGData";
-import SVG from "../../SVG";
-import WebAnimationImage from '../../../assets/images/animationImage.png';
-import { theme } from "../../../data/theme";
+import WebAnimationImage from '../../../assets/images/animationImage.png'
+import { theme } from "../../../data/theme"
 import { 
   StyledSiteIntroduction, 
   StyledBookingStepsInformation, 
-  StyledSearchInformationTop, 
+  StyledSearchInformationTop,
+  StyledSVGContainer,
   StyledBookingStepsContent
-} from "./style";
+} from "./style"
 import HiringSteps from "./hiringSteps";
-import { keyInformation } from "../../../data/keyInformation";
-import { Button } from "../../../app/GlobalStyles.style";
-import { useInView } from "react-intersection-observer";
+import { keyInformation } from "../../../data/keyInformation"
+import { Button } from "../../../app/GlobalStyles.style"
+import { useInView } from "react-intersection-observer"
 
 const SiteIntroduction = () => {
-  const { viewBox, pathData } = SiteIntroductionSVGData;
-  const { ref: bookingStepsRef, inView: bookingStepsAreVisible  } = useInView();
+  const { viewBox, pathData } = SiteIntroductionSVGData
+  const { ref: bookingStepsRef, inView: bookingStepsAreVisible  } = useInView()
+
+  const svgPaths = !pathData[0] ? <></> : pathData.map( (data, index) => 
+    <path
+      d = {data.dimension}
+      stroke = {data.stroke}
+      strokeWidth = {data.strokeWidth}
+      fill = {data.fill}
+      fillOpacity = {data.fillOpacity}
+      key={index}
+    />)
 
   var siteIntroductionMessageToDisplay_header = `Are you looking to hire ${keyInformation.workersTitle}?`
   var siteIntroductionMessageToDisplay_paragraph = `Hire Excellent ${keyInformation.workersTitle}, Fast. ${keyInformation.siteName} helps you hire elite ${keyInformation.workersTitle} around the world with ease.`
-  const hireWorker = `Hire a ${keyInformation.workerTitle}`;
+  const hireWorker = `Hire a ${keyInformation.workerTitle}`
 
   return(
     <StyledSiteIntroduction>
@@ -30,7 +40,7 @@ const SiteIntroduction = () => {
             <p>{siteIntroductionMessageToDisplay_paragraph}</p>
           </div>
           <div className="search-area">
-            <Button backgroundColor = {theme.colors.themeBlue}>{hireWorker}</Button>
+            <Button backgroundColor = {theme.colors.blue}>{hireWorker}</Button>
           </div>
         </div>
         <img src={WebAnimationImage} alt='Kingshire Animation'/>
@@ -40,10 +50,12 @@ const SiteIntroduction = () => {
           <h2 className={bookingStepsAreVisible? 'animatedTitle': ''}> Hire a Kinglancer in 3 Simple Steps</h2>
           <HiringSteps bookingStepsAreVisible/>
         </StyledBookingStepsContent>
-        <SVG 
-          viewBoxProperty = { viewBox }
-          pathData = { pathData }
-        />
+        <StyledSVGContainer 
+          viewBox={ viewBox }
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          {svgPaths}
+        </StyledSVGContainer>
       </StyledBookingStepsInformation>
     </StyledSiteIntroduction>
   )

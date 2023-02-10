@@ -6,11 +6,11 @@ export const theme = {
     mobile: "1.2rem"
   },
   colors: {
-    themeBackgroundColor: "#FCFCDB",
-    themeBlue: "#1652F0",/* "#1E88E5" */
-    themeGreen: "#2ea44f",
-    themeRed: "#db2c44",
-    error: 'firebrick'
+    error: 'firebrick',
+    success: '#2ea44f',
+    blue: '#1652F0',
+    backgroundRed: '#db2c44',
+    backgroundMagniola: '#FCFCDB'
   },
   heights: {
     header: "8rem",

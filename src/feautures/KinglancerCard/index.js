@@ -21,7 +21,7 @@ const KinglancerCard = ({image}) => {
           <li key={3}>Software Engineering <span>{` £${80}`}</span></li>
         </ul>
         <div>
-          <BookButton backgroundColor={theme.colors.themeGreen}>Book</BookButton>
+          <BookButton backgroundColor={theme.colors.success}>Book</BookButton>
         </div>
       </KinglancerCardDetails>
     </StyledKinglancerCardContainer>

@@ -12,7 +12,7 @@ export const NavigationListMobileStyle = styled.ul`
 	padding: 0 ${ props => props.theme.paddings.mainHorizontal };
 	display: flex;
 	height: fit-content;
-	background-color: ${ props => props.theme.colors.themeBackgroundColor };
+	background-color: ${ props => props.theme.colors.backgroundMagniola };
 	width: ${ props => props.theme.widths.full };
 	flex-direction: column;
 	position: absolute;
@@ -22,7 +22,7 @@ export const NavigationListMobileStyle = styled.ul`
 
 	& li{
 		display: flex;
-		border-bottom: .1rem solid ${ props => props.theme.colors.themeBlue };
+		border-bottom: .1rem solid ${ props => props.theme.colors.blue };
 		&:last-child{
 			border-bottom: none;
 		}
@@ -33,7 +33,7 @@ export const StyledNavLink = styled(Link)`
 	width: ${ props => props.theme.widths.full };
 	padding: ${ props => props.theme.paddings.navListItem } 0;
 	font-size: ${ props => props.theme.fontSizes.main };
-	color: ${ props => props.theme.colors.themeBlue };
+	color: ${ props => props.theme.colors.blue };
 	cursor: pointer;
 `
 
