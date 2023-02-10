@@ -1,7 +1,8 @@
-import SelectedJobTitles from "../../../feautures/HorizontalSlideBar/SelectedJobTitles";
-import SiteIntroductionSection from "../../../feautures/siteIntroduction";
+import SelectedJobTitles from "./HorizontalSlideBar/SelectedJobTitles";
+
+import SiteIntroductionSection from "./siteIntroduction";
 import { StyledHomePageContainer } from "./style";
-import TopRatedKinglancers from "../../../feautures/TopRatedKinglancers";
+import TopRatedKinglancers from "./TopRatedKinglancers";
 
 const Home = () => {
   return(

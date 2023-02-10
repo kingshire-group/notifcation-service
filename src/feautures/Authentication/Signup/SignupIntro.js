@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Google from "../../../feautures/Auth/Google"
+import Google from "../Google"
 import { StyledSignupIntro } from "./style";
 import useResize from "../../../hooks/useResize"
 import {keyInformation} from '../../../data/keyInformation'
@@ -13,7 +13,7 @@ import {
 import { 
   selectCurrentAuthStatus,
   setAuthStatus
-} from "../../../feautures/Auth/authSlice"
+} from "../authSlice"
 
 const SignupIntro = () => {
   const signUpContainerRef = useRef();

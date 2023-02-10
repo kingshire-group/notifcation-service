@@ -1,13 +1,13 @@
-import { keyInformation } from "../../data/keyInformation";
-import KinglancerCard from "../KinglancerCard";
+import { keyInformation } from "../../../data/keyInformation";
+import KinglancerCard from "../../KinglancerCard";
 import { 
   StyledTopRatedContainer,
   StyledKinglancersTopRatedCards
 } from "./style";
 
-import TimothyKinglancer from "../../assets/images/timothyKinglancer.jpg"
-import TimothyKinglancer2 from "../../assets/images/timothyKinglancer2.jpg"
-import TimothyKinglancer3 from "../../assets/images/timothyKinglancer3.jpg"
+import TimothyKinglancer from "../../../assets/images/timothyKinglancer.jpg"
+import TimothyKinglancer2 from "../../../assets/images/timothyKinglancer2.jpg"
+import TimothyKinglancer3 from "../../../assets/images/timothyKinglancer3.jpg"
 
 const TopRatedKinglancers = () => {
   return(

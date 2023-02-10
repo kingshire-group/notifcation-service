@@ -1,6 +1,6 @@
 import { StyledHeader } from "./style";
 import NavBar from "../../feautures/NavBar";
-import Logo from "../Logo";
+import Logo from "../../feautures/Logo";
 //import SelectedJobTitles from "../../feautures/HorizontalSlideBar/SelectedJobTitles";
 
 const Header = () => {

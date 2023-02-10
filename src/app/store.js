@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import burgerButtonReducer from "../feautures/BurgerButton/burgerButtonSlice";
 import PageRedirectMessageSlice from '../feautures/pageRedirectMessage/pageRedirectMessageSlice'
 import { apiSlice } from "./apiSlice";
-import authReducer from '../feautures/Auth/authSlice'
+import authReducer from '../feautures/Authentication/authSlice'
 
 export const store = configureStore({
 	reducer: {

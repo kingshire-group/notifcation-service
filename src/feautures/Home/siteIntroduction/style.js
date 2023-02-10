@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { slideFromLeft, slideFromRight } from "../../app/GlobalStyles.style";
+import { slideFromLeft, slideFromRight } from "../../../app/GlobalStyles.style";
 
 export const StyledSiteIntroduction = styled.div`
   background-color: ${ props => props.theme.colors.themeBackgroundColor };

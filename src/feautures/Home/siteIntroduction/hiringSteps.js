@@ -1,5 +1,5 @@
-import { keyInformation } from "../../data/keyInformation";
-import '../../lib/fontawesome'
+import { keyInformation } from "../../../data/keyInformation";
+import '../../../lib/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StyledHiringSteps } from "./style";
 

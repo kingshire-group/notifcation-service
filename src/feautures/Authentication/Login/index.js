@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 import { useRef } from "react"
-import Google from "../../../feautures/Auth/Google"
+import Google from "../../../feautures/Authentication/Google"
 import useResize from "../../../hooks/useResize"
 import LoginAnimation from "./LoginAnimation";
 import FormInput from "../Email/FormInput";

@@ -1,7 +1,7 @@
-import { SiteIntroductionSVGData } from "../../data/SVGData";
-import SVG from "../SVG";
-import WebAnimationImage from '../../assets/images/animationImage.png';
-import { theme } from "../../data/theme";
+import { SiteIntroductionSVGData } from "../../../data/SVGData";
+import SVG from "../../SVG";
+import WebAnimationImage from '../../../assets/images/animationImage.png';
+import { theme } from "../../../data/theme";
 import { 
   StyledSiteIntroduction, 
   StyledBookingStepsInformation, 
@@ -9,8 +9,8 @@ import {
   StyledBookingStepsContent
 } from "./style";
 import HiringSteps from "./hiringSteps";
-import { keyInformation } from "../../data/keyInformation";
-import { Button } from "../../app/GlobalStyles.style";
+import { keyInformation } from "../../../data/keyInformation";
+import { Button } from "../../../app/GlobalStyles.style";
 import { useInView } from "react-intersection-observer";
 
 const SiteIntroduction = () => {

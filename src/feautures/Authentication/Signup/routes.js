@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import SignupIntro from "./SignupIntro"
-import Email from '../../../feautures/Auth/Email'
-import Username from "../../../feautures/Auth/Username"
+import Email from '../Email'
+import Username from "../Username"
 import SignupLayout from "."
 import SignupCompleted from "./SignupCompleted"
 
