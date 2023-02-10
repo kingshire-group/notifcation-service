@@ -98,6 +98,7 @@ export const GlobalStyles = createGlobalStyle`
 `
 export const Button = styled.button`
   border-radius: ${props => props.theme.borderRadius.button};
+  font-size: ${props => props.theme.fontSizes.button};
   padding: 1.2rem 1.6rem;
   cursor: pointer;
   background-color: ${props => props.backgroundColor};

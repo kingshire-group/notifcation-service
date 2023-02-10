@@ -7,8 +7,8 @@ export const StyledSingUpContainer = styled.div`
   background-color: ${props => props.theme.colors.backgroundRed};
   & .signup-wrapper{
     margin: auto;
-    width: 90%;
-    padding: 1rem;
+    width: 80%;
+    padding: 2rem;
     border-radius: ${props => props.theme.borderRadius.form};
 
     & h1{
@@ -17,9 +17,6 @@ export const StyledSingUpContainer = styled.div`
 
     & p.singup-agreement, >p:last-child{
       font-size:${props => props.theme.fontSizes.mobile};
-    }
-
-    & >p:last-child{
       text-align: center;
     }
   }
@@ -33,10 +30,10 @@ export const StyledSignupIntro = styled.div`
     }
   }
   & .singup-options{
-    margin: 6rem 0;
+    margin: 8rem 0;
 
     & .singup-agreement{
-      margin-top: 2rem;
+      margin-top: 6rem;
     }
 
     & .email-signup-bttn{
@@ -49,7 +46,11 @@ export const StyledSignupIntro = styled.div`
       background-color: ${props => props.theme.colors.backgroundRed};
       border-radius: 2rem;
     }
-  } 
+  }
+  
+  & >p:last-child{
+    text-align: center;
+  }
 `
 
 export const StyledGoogleAuthError = styled.span`

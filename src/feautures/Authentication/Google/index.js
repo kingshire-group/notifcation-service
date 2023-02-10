@@ -11,8 +11,6 @@ const Google = ({googleButtonWidth}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  console.log(`width: ${googleButtonWidth}`)
-
   const handleGoogleLoginSuccess = async(credentialResponse) => {
     try {
       const response = await googleAuth(credentialResponse);

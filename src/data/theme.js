@@ -3,7 +3,8 @@ const margiOnLeftAndRight = "1.5rem"
 export const theme = {
   fontSizes: {
     main: "1.3rem",
-    mobile: "1.2rem"
+    mobile: "1.3rem",
+    button: '1.5rem'
   },
   colors: {
     error: 'firebrick',
@@ -30,6 +31,6 @@ export const theme = {
   },
   borderRadius: {
     form: "1rem",
-    button: "1rem"
+    button: "3rem"
   }
 };
