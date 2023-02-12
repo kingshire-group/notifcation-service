@@ -1,26 +1,25 @@
-import { Formik } from "formik";
-import FormInput from "./FormInput";
+import { useFormik } from "formik"
+import FormInput from "./FormInput"
+import { inputSchema } from './schema'
 import { SubmitButton } from '../../../app/GlobalStyles.style'
 import { 
   StyledSingUpForm 
-} from "./style";
-
+} from "./style"
 import {keyInformation} from '../../../data/keyInformation'
 
 const EmailForm = () => {
-  const singUpFormik = Formik({
+  const { values, errors, handleChange, handleBlur, handleSubmit } = useFormik({
     initialValues: {
       fullname: '',
-      username: '',
       email: '',
       password: '',
       confirmpassword: '',
-      termsConditions: ''
     },
+    validationSchema: inputSchema,
     onSubmit: (values) => {
       console.log(values)
     }
-  }).props.value
+  })
 
   const inputs = [
     {
@@ -54,7 +53,7 @@ const EmailForm = () => {
   ]
 
   return (
-    <StyledSingUpForm>
+    <StyledSingUpForm onSubmit= {handleSubmit} autoComplete='off'>
       <div className="form-title">
         <h1>Let's fill this in... ✍📝</h1>
         <span style={{opacity: 0.5}}>
@@ -64,8 +63,8 @@ const EmailForm = () => {
       </div>
       {inputs.map(input => 
         <FormInput key={input.id} {...input} 
-          value={singUpFormik.values[input.name]} 
-          onChange={singUpFormik.handleChange}
+          value={values[input.name]} 
+          onChange={handleChange}
         />
       )}
       <SubmitButton>Submit</SubmitButton>
