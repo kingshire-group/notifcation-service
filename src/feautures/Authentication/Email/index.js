@@ -1,14 +1,16 @@
-import { Formik } from "formik";
+import { useFormik } from "formik";
 import FormInput from "./FormInput";
 import { SubmitButton } from '../../../app/GlobalStyles.style'
 import { 
   StyledSingUpForm 
 } from "./style";
+//import { useSignupMutation } from '../authApiSlice'
 
 import {keyInformation} from '../../../data/keyInformation'
 
 const EmailForm = () => {
-  const singUpFormik = Formik({
+  //const [ signupUser ] = useSignupMutation()
+  const singUpFormik = useFormik({
     initialValues: {
       fullname: '',
       username: '',
@@ -18,9 +20,12 @@ const EmailForm = () => {
       termsConditions: ''
     },
     onSubmit: (values) => {
+      console.log('Form submited')
       console.log(values)
     }
-  }).props.value
+  })
+
+  console.log(singUpFormik)
 
   const inputs = [
     {

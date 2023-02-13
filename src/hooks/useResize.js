@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useEffect } from "react"
+import { useState, useLayoutEffect, useEffect, useCallback } from "react"
 
 export default function useResize(targetRef) {
   const getDimensions = () => {
@@ -10,10 +10,15 @@ export default function useResize(targetRef) {
 
   const [dimensions, setDimensions] = useState(getDimensions);
 
-  const handleResize = () => {
+/*   const handleResize = () => {
     setDimensions(getDimensions());
   };
-
+ */
+  const handleResize = useCallback(() => {
+    setDimensions(getDimensions())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -21,25 +26,7 @@ export default function useResize(targetRef) {
 
   useLayoutEffect(() => {
     handleResize();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return dimensions;
-  /* const [width, setWidth] = useState(329)
-  const [height, setHeight] = useState(0)
-  
-  const handleResize = useCallback(() => {
-      setWidth(myRef.current.offsetWidth)
-      setHeight(myRef.current.offsetHeight)
-  }, [myRef])
-
-  useEffect(() => {
-    window.addEventListener('load', handleResize)
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('load', handleResize)
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [myRef, handleResize])
-
-  return { width, height } */
 }
