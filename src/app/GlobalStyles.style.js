@@ -60,6 +60,9 @@ export const GlobalStyles = createGlobalStyle`
     font-size: ${theme.fontSizes.mobile};
     color: ${theme.colors.error};
   }
+  .input-error{
+    border-color: ${theme.colors.error};
+  }
   .penClipIcon{
     font-size: 1.3rem;
     border-bottom: .1rem solid white;
@@ -89,7 +92,7 @@ export const GlobalStyles = createGlobalStyle`
     margin-left: 1rem;
   }
 
-  .formInput{
+  .form-input-container{
     margin-bottom: 1.5rem;
 
     & :last-child{
@@ -116,7 +119,7 @@ export const Button = styled.button`
   overflow: hidden;
 
   &:disabled{
-    opacity: .5;
+    opacity: .35;
   }
 
   &:focus {
@@ -161,4 +164,9 @@ export const slideFromRight = keyframes`
     transform: translateX(0);
     opacity: 1;
    } 
+`
+
+export const StyledFormErrorMessage = styled.p`
+  font-style: italic;
+	color: ${props => props.theme.colors.error};
 `

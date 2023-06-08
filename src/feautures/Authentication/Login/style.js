@@ -21,9 +21,14 @@ export const StyledLoginPageContainer = styled.div`
       margin-bottom: 2rem;
     }
 
-    & p{
-      margin: 2rem 0;
+    & .other-options{
+      margin: auto;
       text-align: center;
+
+      & p{
+      margin: 1.5rem 0;
+      text-align: center;
+    }
     }
   }
 `
@@ -32,9 +37,12 @@ export const StyledLoginForm = styled.form`
   display: flex;
   flex-direction: column;
 
-  & .forgot-password{
-    margin: 1rem 0 2rem 0;
-    text-align: right;
+  & .LoginInputs{
+    margin-bottom: 1.5rem;
+
+    & >div:first-child{
+      margin-bottom: 1rem;
+    }
   }
 ` 
 

@@ -1,11 +1,11 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"
 import Home from './feautures/Home'
 import Login from './feautures/Authentication/Login'
-import SignupRoutes from "./feautures/Authentication/Signup/routes";
-import Profile from "./feautures/Profile";
-import useWindowDimensions from "./hooks/useWindowDimensions";
-import PasswordForgotten from "./feautures/Authentication/Password/PasswordForgotten";
-import PasswordReset from "./feautures/Authentication/Password/PasswordReset";
+import SignupRoutes from "./feautures/Authentication/Signup/routes"
+import Profile from "./feautures/Profile"
+import useWindowDimensions from "./hooks/useWindowDimensions"
+import PasswordForgotten from "./feautures/Authentication/AccountRecovery/PasswordForgotten"
+import PasswordReset from "./feautures/Authentication/AccountRecovery/PasswordReset"
 const AppRoutes = ({AppLayout}) => {
 	const {height, } = useWindowDimensions();
 

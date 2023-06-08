@@ -1,8 +1,8 @@
-import { Formik } from "formik";
-import FormInput from "../Email/FormInput";
+import { Formik } from "formik"
 import { SubmitButton } from '../../../app/GlobalStyles.style'
 import { StyledPasswordContainer } from "./style"
-import { StyledSingUpForm } from "../Email/style";
+import { StyledSingUpForm } from "../Signup/Email/style"
+import FormInput from "../Signup/Email/FormInput"
 
 const PasswordReset = ({height}) => {
   const passwordResetFormik = Formik({

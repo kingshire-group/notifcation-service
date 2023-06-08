@@ -2,7 +2,6 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { processResponse } from '../../../utils/processResponse'
-import { showMessage } from '../../pageRedirectMessage/pageRedirectMessageSlice';
 import { useGoogleAuthMutation } from '../authApiSlice'
 import { setAuthStatus, setCredentials } from '../authSlice';
 
@@ -38,7 +37,6 @@ const Google = ({googleButtonWidth}) => {
 
   const handleSuccessAuth = profile => {
     dispatch(setCredentials({user: profile, accessToken: 'coming soon'}))
-    dispatch(showMessage());
     navigate('/user/signup/auth-username')
   }
 

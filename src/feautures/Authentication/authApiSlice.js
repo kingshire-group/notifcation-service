@@ -2,7 +2,7 @@ import { apiSlice } from "../../app/apiSlice";
 
 export const authApiSlice = apiSlice.injectEndpoints({
 	endpoints: builder => ({
-		signup: builder.mutation({
+		createProfile: builder.mutation({
 			query: payload => ({
 				url: '/auth/signup/email',
 				method: 'Post',
@@ -34,7 +34,8 @@ export const authApiSlice = apiSlice.injectEndpoints({
 })
 
 export const {
-	useSignupMutation,
+	useCreateProfileMutation,
+	useCreateUsernameMutation,
 	useGoogleAuthMutation, 
 	useLoginMutation
 } = authApiSlice
