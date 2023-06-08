@@ -10,23 +10,12 @@ import { Button, StyledLink } from '../../../app/GlobalStyles.style'
 import { 
   StyledGoogleAuthError
 } from "./style"
-import { 
-  selectCurrentAuthStatus,
-  setAuthStatus
-} from "../authSlice"
 
 const SignupIntro = () => {
   const signUpContainerRef = useRef();
-  const { width: googleButtonWidth } = useResize(signUpContainerRef);
-  const authStatus = useSelector(selectCurrentAuthStatus);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const routeChange = path => navigate(path)
-
-  useEffect(() => {
-    dispatch(setAuthStatus({status: null, message: null}))
-  })
+  const { width: googleButtonWidth } = useResize(signUpContainerRef)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   return (
     <StyledSignupIntro>
@@ -37,16 +26,10 @@ const SignupIntro = () => {
         </span>
       </div>
       <div className="singup-options">
-        <section className={authStatus.status==='failed'? 'show': 'hide'}>
-          <StyledGoogleAuthError>
-            <FontAwesomeIcon className="errorCircleExclamationMark" icon='circle-exclamation'/>
-            <p>{authStatus.message}</p>
-          </StyledGoogleAuthError>
-        </section>
         <div ref={signUpContainerRef}>
           <Google googleButtonWidth={googleButtonWidth}/>
           <h3 className="horizontal-or-separator">or</h3>
-          <Button className="email-signup-bttn" onClick={() => routeChange('/user/signup/email')}>
+          <Button className="email-signup-bttn" onClick={() => navigate('/user/signup/email')}>
             <p>Sign up with Email</p>
           </Button>
         </div>

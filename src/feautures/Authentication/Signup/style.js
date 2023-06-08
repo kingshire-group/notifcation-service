@@ -53,21 +53,6 @@ export const StyledSignupIntro = styled.div`
   }
 `
 
-export const StyledGoogleAuthError = styled.span`
-  display: flex;
-  color: ${props => props.theme.colors.error};
-  font-size: ${props => props.theme.fontSizes.mobile};
-  font-weight: bold;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem;
-
-  .errorCircleExclamationMark{
-    font-size: 2.5rem;
-    padding-right: .5rem;
-  }
-`
-
 export const StyledSignupCompletion = styled.div`
   background-color: ${props => props.theme.colors.success};
   color: white;

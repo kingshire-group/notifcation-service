@@ -26,7 +26,7 @@ const SignupLayout = () => {
 
   const close = () => setOpenModal(false)
   const open = () => setOpenModal(true)
-  console.log(providerValue)
+
   return(
     <SignUpFormContext.Provider value={ {open, close,...providerValue} }>
       <StyledSingUpContainer height={height}>

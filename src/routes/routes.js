@@ -1,13 +1,15 @@
 import { Routes, Route } from "react-router-dom"
-import Home from './feautures/Home'
-import Login from './feautures/Authentication/Login'
-import SignupRoutes from "./feautures/Authentication/Signup/routes"
-import Profile from "./feautures/Profile"
-import useWindowDimensions from "./hooks/useWindowDimensions"
-import PasswordForgotten from "./feautures/Authentication/AccountRecovery/PasswordForgotten"
-import PasswordReset from "./feautures/Authentication/AccountRecovery/PasswordReset"
+import Home from '../feautures/Home'
+import Login from '../feautures/Authentication/Login'
+import SignupRoutes from "../feautures/Authentication/Signup/routes"
+import Profile from "../feautures/Profile"
+import useWindowDimensions from "../hooks/useWindowDimensions"
+import PasswordForgotten from "../feautures/Authentication/AccountRecovery/PasswordForgotten"
+import PasswordReset from "../feautures/Authentication/AccountRecovery/PasswordReset"
+import ProtectedRoutes from "./ProtectedRoutes"
+
 const AppRoutes = ({AppLayout}) => {
-	const {height, } = useWindowDimensions();
+	const { height } = useWindowDimensions()
 
   return(
 		<Routes>
@@ -28,9 +30,11 @@ const AppRoutes = ({AppLayout}) => {
 					<Route path="become-a-client" element = {<p> become a client Page</p>}/>
 				</Route>
 			</Route>
-			<Route path="user-profile/:id" element={<Profile height={height}/>} />
+			<Route element={<ProtectedRoutes />}>
+				<Route path="user-profile/:id" element={<Profile height={height}/>} />
+			</Route>
 		</Routes>
 	)
 }
 
-export default AppRoutes;
+export default AppRoutes

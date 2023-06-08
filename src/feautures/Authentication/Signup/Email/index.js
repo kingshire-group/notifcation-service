@@ -7,19 +7,20 @@ import {
 } from "./style"
 import {keyInformation} from '../../../../data/keyInformation'
 import Error from "./Error"
-import { createContext, useContext, useEffect } from "react"
+import { useContext, useEffect } from "react"
 import Modal from "../../../Modal"
 import { Link, useNavigate } from "react-router-dom"
-import { useCreateProfileMutation } from "../../authApiSlice"
+import { useCreateProfileMutation, useLoginMutation } from "../../authApiSlice"
 import { toast } from "react-toastify"
 import { processResponse } from "../../../../utils/processResponse"
 import { theme } from "../../../../data/theme"
 import { SignUpFormContext } from ".."
 import { SubmitButton } from "../../../../app/GlobalStyles.style"
+import { useDispatch } from "react-redux"
+import { setCredentials } from "../../authSlice"
 
-//export const EmailFormContext = createContext()
- // password rules
- const passwordRules = [
+// password rules
+const passwordRules = [
   'have at least one upper and lower case letter',
   'have at least one digit',
   'have at least one special character - #?!@$%^&*- ',
@@ -29,8 +30,21 @@ import { SubmitButton } from "../../../../app/GlobalStyles.style"
 const EmailForm = () => {
   const { openModal, close } = useContext(SignUpFormContext)
   const navigate = useNavigate()
-  const [createProfile, { isLoading, isSuccess, error, isError }] = 
-    useCreateProfileMutation()
+  const dispatch = useDispatch()
+
+  const [createProfile, {
+    isLoading: isLoadingProfileCreation,
+    isSuccess: isSuccessProfileCreation,
+    error: errorProfileCreation,
+    isError: isErrorProfileCreation
+  }] = useCreateProfileMutation()
+
+  const [login, {
+    isLoading: isLoadingLogin,
+    isSuccess: isSuccessLogin,
+    error: errorLogin,
+    isError: isErrorLogin
+  }] = useLoginMutation()
 
   const passwordRulesModalHtml = 
     <StyledSignUpRules>
@@ -45,17 +59,28 @@ const EmailForm = () => {
     </StyledSignUpRules>
 
   useEffect(() => {
-    if (isSuccess) {
-      toast.success('User registered successfully')
-    }
-    if (isError) {
-      const message = error.status === 'FETCH_ERROR' ?
+    if (isErrorProfileCreation) {
+      const message = errorProfileCreation.status === 'FETCH_ERROR' ?
         `Error occurred - server down`:
         'Registration failed. Please try again!'
       toast.error(message)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading]);
+  }, [isLoadingProfileCreation])
+
+  useEffect(() => {
+    if (isSuccessProfileCreation && isSuccessLogin) {
+      toast.success('signup and login successful')
+    }
+
+    if (isErrorLogin) {
+      const message = errorLogin.status === 'FETCH_ERROR' ?
+        `Error occurred - server down`:
+        'Login failed. Please try again!'
+      toast.error(message)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoadingLogin])
 
   // Form
   const { values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit } = useFormik({
@@ -68,13 +93,21 @@ const EmailForm = () => {
     validationSchema: inputSchema,
     onSubmit: async (values, actions) => {
       try {
-        const response = await createProfile(values)
-        const { data, status } = processResponse(response)
+        const responseForProfileCreation = await createProfile(values)
+        const { status } = processResponse(responseForProfileCreation)
         if(status === 'success') {
           actions.setSubmitting(false)
           actions.resetForm()
-          //login user here
-          navigate('/user/signup/auth-username')
+          //login user
+          const responseForUserLogin = await login({
+            email: values.email,
+            password: values.password
+          })
+          const { data, status: loginStatus } = processResponse(responseForUserLogin)
+          if(loginStatus === 'success'){
+            dispatch(setCredentials(data))
+            navigate(`/user-profile/${data.user.username}`)
+          }
         }
         else{
           console.log('Form submission failed')

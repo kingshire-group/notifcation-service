@@ -3,35 +3,36 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { processResponse } from '../../../utils/processResponse'
 import { useGoogleAuthMutation } from '../authApiSlice'
-import { setAuthStatus, setCredentials } from '../authSlice';
+import { setCredentials } from '../authSlice'
+import { toast } from 'react-toastify'
+import { useEffect } from 'react'
 
 const Google = ({googleButtonWidth}) => {
-  const [ googleAuth ] = useGoogleAuthMutation();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const [ googleAuth, { isLoading, isSuccess, error, isError } ] = useGoogleAuthMutation()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success('signup and login successful')
+    }
+
+    if (isError) {
+      const message = error.status === 'FETCH_ERROR' ?
+        `Error occurred - server down`:
+        'Login failed. Please try again!'
+      toast.error(message)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading])
 
   const handleGoogleLoginSuccess = async(credentialResponse) => {
     try {
-      const response = await googleAuth(credentialResponse);
-      const {data, status} = processResponse(response);
-      if(status !== 'success') return handleFailedAuth(data, status)
-      return handleSuccessAuth(data)
+      const response = await googleAuth(credentialResponse)
+      const {data, status} = processResponse(response)
+      if(status === 'success') { handleSuccessAuth(data) }
     } catch (error) {
       console.log(error)
-      handleFailedAuth(null, error)
-    }
-  }
-
-  const handleFailedAuth = (data, error) => {
-    const status = 'failed'
-    if(error===401 && data){
-      dispatch(setAuthStatus({status, message: 'Unauthorized. Access Denied!'}))
-    }
-    else if(!error?.originalStatus){
-      dispatch(setAuthStatus({status, message: 'No Server Response'}))
-    }
-    else{
-      dispatch(setAuthStatus({status, message: 'Login Failed'}))
     }
   }
 
