@@ -1,21 +1,21 @@
-import { useDispatch } from "react-redux";
-import { toggleOff } from "../BurgerButton/burgerButtonSlice";
-import { buildPath } from "../../utils/buildPath";
-import { NavigationListDesktopStyle, StyledNavLink } from "./style";
-import { navigationOptions } from "../../data/navigation";
+import { useDispatch } from 'react-redux'
+import { toggleOff } from '../BurgerButton/burgerButtonSlice'
+import { buildPath } from '../../utils/buildPath'
+import { NavigationListDesktopStyle, StyledNavLink } from './style'
+import { MENU_OPTIONS } from '../../data/constants'
 
 const NavBarList = ({StyledNavBarList = NavigationListDesktopStyle}) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   return(
     <StyledNavBarList>
-      {navigationOptions.map(( navigationOption ) => 
-        <li key={navigationOption.id}>
+      {MENU_OPTIONS.map(( option ) => 
+        <li key={option.id}>
           <StyledNavLink 
-            to = { buildPath(navigationOption) } 
+            to = { buildPath(option) } 
             onClick = {() => dispatch(toggleOff())}
           >
-            {navigationOption.name}
+            {option.name}
           </StyledNavLink>
         </li>
       )}
@@ -23,4 +23,4 @@ const NavBarList = ({StyledNavBarList = NavigationListDesktopStyle}) => {
   )
 }
 
-export default NavBarList;
+export default NavBarList

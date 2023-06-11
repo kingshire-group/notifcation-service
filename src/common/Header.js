@@ -1,6 +1,6 @@
-import { StyledHeader } from './Header/style'
-import NavBar from '../../feautures/NavBar'
-import Logo from '../../feautures/Logo'
+import { StyledHeader } from './style'
+import NavBar from '../components/NavBar'
+import Logo from '../components/Logo'
 
 const Header = () => {
   return(
@@ -8,7 +8,7 @@ const Header = () => {
       <Logo/>
       <NavBar></NavBar>
     </StyledHeader>
-  );
+  )
 }
 
 export default Header

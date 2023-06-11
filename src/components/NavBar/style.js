@@ -37,5 +37,4 @@ export const StyledNavLink = styled(Link)`
 	cursor: pointer;
 `
 
-export const NavigationListDesktopStyle = styled.ul`
-`
+export const NavigationListDesktopStyle = styled.ul``

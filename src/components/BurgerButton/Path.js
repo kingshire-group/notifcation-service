@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 
 const Path = (props) => {
   return(
@@ -11,4 +11,4 @@ const Path = (props) => {
   )
 }
 
-export default Path;
+export default Path

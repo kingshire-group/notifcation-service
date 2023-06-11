@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux"
-import { Navigate, Outlet } from "react-router-dom"
+import { useSelector } from 'react-redux'
+import { Navigate, Outlet } from 'react-router-dom'
 import {
   selectCurrentAuthStatus,
   selectCurrentUser
-} from "../feautures/Authentication/authSlice"
+} from '../feautures/authentication/authSlice'
 
 const ProtectedRoutes = () => {
   const href = window.location.href

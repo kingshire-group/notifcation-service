@@ -1,17 +1,17 @@
-import { SiteIntroductionSVGData } from "../../../data/SVGData";
-import WebAnimationImage from '../../../assets/images/animationImage.png'
-import { theme } from "../../../data/theme"
+import { useInView } from 'react-intersection-observer'
+import { SiteIntroductionSVGData } from './SVGData'
+import WebAnimationImage from '../../assets/images/animationImage.png'
+import { theme } from '../../data/theme'
 import { 
   StyledSiteIntroduction, 
   StyledBookingStepsInformation, 
   StyledSearchInformationTop,
   StyledSVGContainer,
   StyledBookingStepsContent
-} from "./style"
-import HiringSteps from "./hiringSteps";
-import { keyInformation } from "../../../data/keyInformation"
-import { Button } from "../../../app/GlobalStyles.style"
-import { useInView } from "react-intersection-observer"
+} from './style'
+import HiringSteps from './hiringSteps'
+import { SITE } from '../../data/constants'
+import { Button } from '../temp-styles'
 
 const SiteIntroduction = () => {
   const { viewBox, pathData } = SiteIntroductionSVGData
@@ -27,19 +27,19 @@ const SiteIntroduction = () => {
       key={index}
     />)
 
-  var siteIntroductionMessageToDisplay_header = `Are you looking to hire ${keyInformation.workersTitle}?`
-  var siteIntroductionMessageToDisplay_paragraph = `Hire Excellent ${keyInformation.workersTitle}, Fast. ${keyInformation.siteName} helps you hire elite ${keyInformation.workersTitle} around the world with ease.`
-  const hireWorker = `Hire a ${keyInformation.workerTitle}`
+  var siteIntroductionMessageToDisplay_header = `Are you looking to hire ${SITE.workersTitle}?`
+  var siteIntroductionMessageToDisplay_paragraph = `Hire Excellent ${SITE.workersTitle}, Fast. ${SITE.siteName} helps you hire elite ${SITE.workersTitle} around the world with ease.`
+  const hireWorker = `Hire a ${SITE.workerTitle}`
 
   return(
     <StyledSiteIntroduction>
       <StyledSearchInformationTop>
-        <div className="information-container">
-          <div className="kingsHire-motto">
+        <div className='information-container'>
+          <div className='kingsHire-motto'>
             <h1>{siteIntroductionMessageToDisplay_header}</h1>
             <p>{siteIntroductionMessageToDisplay_paragraph}</p>
           </div>
-          <div className="search-area">
+          <div className='search-area'>
             <Button backgroundColor = {theme.colors.blue}>{hireWorker}</Button>
           </div>
         </div>

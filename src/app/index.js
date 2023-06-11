@@ -6,9 +6,6 @@ import Layout from './Layout'
 import AppRoutes from '../routes'
 import { theme } from '../data/theme'
 
-
-
-
 function App() {
   return (
     <>

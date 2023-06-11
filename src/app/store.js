@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import burgerButtonReducer from '../feautures/BurgerButton/burgerButtonSlice'
+import burgerButtonReducer from '../components/BurgerButton/burgerButtonSlice'
 import { apiSlice } from './apiSlice'
 import authReducer from '../feautures/authentication/authSlice'
 

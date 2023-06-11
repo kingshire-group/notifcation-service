@@ -1,8 +1,7 @@
-import { keyInformation } from "../../data/keyInformation";
+import { SITE } from '../../data/constants'
 import '../../lib/fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { StyledHiringSteps } from "./style";
-
+import { StyledHiringSteps } from './style'
 
 const steps = [
   {
@@ -11,12 +10,12 @@ const steps = [
     id: 1
   },
   {
-    title: `Search a ${keyInformation.workerTitle}`,
+    title: `Search a ${SITE.workerTitle}`,
     fontAwesomeIconString: 'magnifying-glass',
     id: 2
   },
   {
-    title: `Hire a ${keyInformation.workerTitle}`,
+    title: `Hire a ${SITE.workerTitle}`,
     fontAwesomeIconString: 'handshake-simple',
     id: 3
   }
@@ -25,10 +24,10 @@ const HiringSteps = (props) => {
   const hiringStepsList = 
     steps.map( step => 
       <li key={step.id}>
-        <FontAwesomeIcon icon = {step.fontAwesomeIconString} size="2x"/>
+        <FontAwesomeIcon icon = {step.fontAwesomeIconString} size='2x'/>
         <h3>{`${step.id}. ${step.title}`}</h3>
       </li>
-    );
+    )
 
   return(
     <StyledHiringSteps>
@@ -39,4 +38,4 @@ const HiringSteps = (props) => {
   )
 }
 
-export default HiringSteps;
+export default HiringSteps

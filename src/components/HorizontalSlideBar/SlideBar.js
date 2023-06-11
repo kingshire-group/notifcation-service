@@ -19,4 +19,4 @@ const HorizontalSlideBar = ({ data }) => {
 	)
 }
 
-export default HorizontalSlideBar;
+export default HorizontalSlideBar

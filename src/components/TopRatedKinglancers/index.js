@@ -1,28 +1,28 @@
-import { keyInformation } from "../../data/keyInformation";
-import KinglancerCard from "../../KinglancerCard";
+import { SITE } from '../../data/constants'
+import KinglancerCard from '../KinglancerCard'
 import { 
   StyledTopRatedContainer,
   StyledKinglancersTopRatedCards
-} from "./style";
+} from './style'
 
-import TimothyKinglancer from "../../../assets/images/timothyKinglancer.jpg"
-import TimothyKinglancer2 from "../../../assets/images/timothyKinglancer2.jpg"
-import TimothyKinglancer3 from "../../../assets/images/timothyKinglancer3.jpg"
+import TimothyKinglancer from '../../assets/images/timothyKinglancer.jpg'
+import TimothyKinglancer2 from '../../assets/images/timothyKinglancer2.jpg'
+import TimothyKinglancer3 from '../../assets/images/timothyKinglancer3.jpg'
 
 const TopRatedKinglancers = () => {
   return(
     <StyledTopRatedContainer>
-      <div className="TopRated-top">
+      <div className='TopRated-top'>
         <h3>
           Logos, websites, book covers & more
         </h3>
         <h2>
           Checkout The Top Rated
-          <span>{` ${keyInformation.workersTitle}`}</span>
+          <span>{` ${SITE.workersTitle}`}</span>
         </h2>
       </div>
       <StyledKinglancersTopRatedCards>
-        <ul className="topRated-cards">
+        <ul className='topRated-cards'>
           <li key={1}>
             <KinglancerCard image={TimothyKinglancer}/>
           </li>
@@ -36,6 +36,6 @@ const TopRatedKinglancers = () => {
       </StyledKinglancersTopRatedCards>
     </StyledTopRatedContainer>
   )
-};
+}
 
 export default TopRatedKinglancers;

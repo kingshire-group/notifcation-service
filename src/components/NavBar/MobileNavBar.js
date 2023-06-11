@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import BurgerButton from "../BurgerButton";
-import NavBarList from "./NavBarList";
-import { StyledMobileNavBar, NavigationListMobileStyle } from "./style";
+import { useSelector } from 'react-redux'
+import BurgerButton from '../BurgerButton'
+import NavBarList from './NavBarList'
+import { StyledMobileNavBar, NavigationListMobileStyle } from './style'
 
 const MobileNavBar = () => {
   const isOpen = useSelector(state => state.burgerButton.isOpen)
@@ -14,4 +14,4 @@ const MobileNavBar = () => {
   )
 }
 
-export default MobileNavBar;
+export default MobileNavBar
