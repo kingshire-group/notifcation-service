@@ -1,7 +1,8 @@
-import { Outlet } from "react-router-dom"
-import Header from "../Header"
-import Footer from "../Footer"
-import { AppContainer } from "./Layout/style"
+import { Outlet } from 'react-router-dom'
+import Header from '../common/Header'
+import Footer from '../common/Footer'
+import { AppContainer } from './GlobalStyles'
+
 
 const Layout = () => {
   return(

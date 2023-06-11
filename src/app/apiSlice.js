@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { setCredentials, logOut } from '../feautures/Authentication/authSlice'
-import config from '../config/env'
+import { setCredentials, logOut } from '../feautures/authentication/authSlice'
+import config from '../data/config'
 
 const baseQuery = fetchBaseQuery({
 	baseUrl: `${config.backend.authenticationDomain}/api/v1`,

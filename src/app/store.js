@@ -1,7 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit";
-import burgerButtonReducer from "../feautures/BurgerButton/burgerButtonSlice";
-import { apiSlice } from "./apiSlice";
-import authReducer from '../feautures/Authentication/authSlice'
+import { configureStore } from '@reduxjs/toolkit'
+import burgerButtonReducer from '../feautures/BurgerButton/burgerButtonSlice'
+import { apiSlice } from './apiSlice'
+import authReducer from '../feautures/authentication/authSlice'
 
 export const store = configureStore({
 	reducer: {

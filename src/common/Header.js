@@ -1,7 +1,6 @@
-import { StyledHeader } from "./Header/style";
-import NavBar from "../../feautures/NavBar";
-import Logo from "../../feautures/Logo";
-//import SelectedJobTitles from "../../feautures/HorizontalSlideBar/SelectedJobTitles";
+import { StyledHeader } from './Header/style'
+import NavBar from '../../feautures/NavBar'
+import Logo from '../../feautures/Logo'
 
 const Header = () => {
   return(
@@ -12,4 +11,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default Header

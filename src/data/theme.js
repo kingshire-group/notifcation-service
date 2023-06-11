@@ -1,4 +1,4 @@
-const margiOnLeftAndRight = '1.5rem'
+const marginOnLeftAndRight = '1.5rem'
 
 export const theme = {
   fontSizes: {
@@ -21,12 +21,12 @@ export const theme = {
   },
   paddings: {
     noPadding: '0',
-    mainHorizontal: margiOnLeftAndRight,
+    mainHorizontal: marginOnLeftAndRight,
     navListItem: '1.3rem'
   },
   margins: {
     noMargin: '0',
-    mainHorizontal: margiOnLeftAndRight
+    mainHorizontal: marginOnLeftAndRight
   },
   borderRadius: {
     form: '1rem',
