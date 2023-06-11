@@ -1,4 +1,4 @@
-import { Formik } from "formik"
+/* import { Formik } from "formik"
 import { SubmitButton } from '../../../app/GlobalStyles.style'
 import { StyledPasswordContainer } from "./style"
 import { StyledSingUpForm } from "../Signup/Email/style"
@@ -55,4 +55,4 @@ const PasswordReset = ({height}) => {
   )
 }
 
-export default PasswordReset
+export default PasswordReset */

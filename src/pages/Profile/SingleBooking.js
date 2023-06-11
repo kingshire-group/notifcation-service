@@ -1,4 +1,4 @@
-import { StyledSingleBooking } from "./style"
+/* import { StyledSingleBooking } from "./style"
 import {Button} from '../../app/GlobalStyles.style'
 const SingleBooking = () => {
   const projectTitle = 'Squote Website re-design project review'
@@ -23,4 +23,4 @@ const SingleBooking = () => {
   )
 }
 
-export default SingleBooking
+export default SingleBooking */

@@ -1,4 +1,4 @@
-import useWindowDimensions from '../../../hooks/useWindowDimensions'
+/* import useWindowDimensions from '../../../hooks/useWindowDimensions'
 import { 
   StyledSingUpContainer 
 }from "./style"
@@ -40,4 +40,4 @@ const SignupLayout = () => {
   )
 }
 
-export default SignupLayout;
+export default SignupLayout; */

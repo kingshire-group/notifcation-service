@@ -1,4 +1,4 @@
-import { keyInformation } from "../../../data/keyInformation";
+import { keyInformation } from "../../data/keyInformation";
 import KinglancerCard from "../../KinglancerCard";
 import { 
   StyledTopRatedContainer,

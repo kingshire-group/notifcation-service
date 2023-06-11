@@ -1,4 +1,4 @@
-import personalImage from '../../assets/images/timothyKinglancer.jpg'
+/* import personalImage from '../../assets/images/timothyKinglancer.jpg'
 import { StyledPersonalImageContainer } from './style';
 
 const ProfilePicture = () => {
@@ -10,3 +10,4 @@ const ProfilePicture = () => {
 }
 
 export default ProfilePicture;
+ */

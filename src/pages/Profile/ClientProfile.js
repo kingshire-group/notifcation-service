@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react'
+/* import { useState, Fragment } from 'react'
 import { Listbox } from '@headlessui/react'
 import { StyledClientProfileContainer } from './style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -57,4 +57,4 @@ const ClientProfile = () => {
   )
 }
 
-export default ClientProfile;
+export default ClientProfile; */

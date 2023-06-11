@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Marquee from "react-fast-marquee";
 import KinglancerProfile from './KinglanceProfile'
 import ClientProfile from './ClientProfile'
@@ -91,4 +91,4 @@ const Profile = ({height}) => {
 
 }
 
-export default Profile;
+export default Profile; */

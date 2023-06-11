@@ -1,5 +1,5 @@
 import HorizontalSlideBar from ".";
-import { listOfselectedJobTitles } from "../../../data/jobTitles";
+import { listOfselectedJobTitles } from "../../data/jobTitles";
 import { StyledJobTitleBar } from "./style"
 
 const SelectedJobTitles = () => {

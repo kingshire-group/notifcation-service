@@ -1,4 +1,4 @@
-import { useFormik } from "formik";
+/* import { useFormik } from "formik";
 import { useRef } from "react"
 import Google from "../Google"
 import useResize from "../../../hooks/useResize"
@@ -31,7 +31,7 @@ const Login = ({height}) => {
         const { data, status } = processResponse(response)
         console.log(data)
         console.log(status)
-        /* if(status === 'success') {
+        * if(status === 'success') {
           actions.setSubmitting(false)
           actions.resetForm()
           //login user here
@@ -39,7 +39,7 @@ const Login = ({height}) => {
         }
         else{
           console.log('Form submission failed')
-        } */
+        } *
       } catch (error) {
         console.log('Error in submission')
       }
@@ -111,4 +111,4 @@ const Login = ({height}) => {
   )
 }
 
-export default Login;
+export default Login */

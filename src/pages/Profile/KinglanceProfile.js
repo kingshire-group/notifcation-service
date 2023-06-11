@@ -1,4 +1,4 @@
-import { StyledKinglancerProfile } from "./style";
+/* import { StyledKinglancerProfile } from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const KinglanceProfile = (
@@ -74,3 +74,4 @@ const KinglanceProfile = (
 }
 
 export default KinglanceProfile;
+ */

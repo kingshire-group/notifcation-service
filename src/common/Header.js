@@ -1,4 +1,4 @@
-import { StyledHeader } from "./style";
+import { StyledHeader } from "./Header/style";
 import NavBar from "../../feautures/NavBar";
 import Logo from "../../feautures/Logo";
 //import SelectedJobTitles from "../../feautures/HorizontalSlideBar/SelectedJobTitles";

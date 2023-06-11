@@ -61,4 +61,4 @@ const SiteIntroduction = () => {
   )
 }
 
-export default SiteIntroduction;
+export default SiteIntroduction

@@ -1,9 +1,9 @@
-const margiOnLeftAndRight = "1.5rem"
+const margiOnLeftAndRight = '1.5rem'
 
 export const theme = {
   fontSizes: {
-    main: "1.3rem",
-    mobile: "1.4rem",
+    main: '1.3rem',
+    mobile: '1.4rem',
     button: '1.5rem'
   },
   colors: {
@@ -14,23 +14,22 @@ export const theme = {
     backgroundMagniola: '#FCFCDB'
   },
   heights: {
-    header: "8rem",
-    pageRedirectMssg: '5rem'
+    header: '8rem'
   },
   widths: {
-    full: "100%"
+    full: '100%'
   },
   paddings: {
-    noPadding: "0",
+    noPadding: '0',
     mainHorizontal: margiOnLeftAndRight,
-    navListItem: "1.3rem"
+    navListItem: '1.3rem'
   },
   margins: {
-    noMargin: "0",
+    noMargin: '0',
     mainHorizontal: margiOnLeftAndRight
   },
   borderRadius: {
-    form: "1rem",
-    button: "3rem"
+    form: '1rem',
+    button: '3rem'
   }
-};
+}
