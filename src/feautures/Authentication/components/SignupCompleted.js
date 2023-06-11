@@ -1,7 +1,7 @@
 import React from "react";
-import {StyledSignupCompletion} from './style'
-import {keyInformation} from '../../data/keyInformation'
-import {Button} from '../../app/GlobalStyles.style'
+import {StyledSignupCompletion} from '../../../pages/Signup/style'
+import {keyInformation} from '../../../data/keyInformation'
+import {Button} from '../../../app/GlobalStyles.style'
 const UnlockedAnimation = React.lazy(() => import('../../Lottie/Unloncked'));
 
 
@@ -23,4 +23,4 @@ const SignupCompleted = () => {
   )
 }
 
-export default SignupCompleted;
+export default SignupCompleted

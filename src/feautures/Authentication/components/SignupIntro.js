@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Google from "../Google"
-import { StyledSignupIntro } from "./style";
+import { StyledSignupIntro } from "../../../pages/Signup/style";
 import useResize from "../../../hooks/useResize"
 import {keyInformation} from '../../../data/keyInformation'
 import { Button, StyledLink } from '../../../app/GlobalStyles.style'
 import { 
   StyledGoogleAuthError
-} from "./style"
+} from "../../../pages/Signup/style"
 
 const SignupIntro = () => {
   const signUpContainerRef = useRef();
