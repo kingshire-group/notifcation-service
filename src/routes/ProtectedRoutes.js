@@ -6,6 +6,7 @@ import {
 } from "../feautures/Authentication/authSlice"
 
 const ProtectedRoutes = () => {
+  const href = window.location.href
   let pageToNavigate = '/user/login'
 
   const currentUser = useSelector(selectCurrentUser)
@@ -16,10 +17,12 @@ const ProtectedRoutes = () => {
     
     if( currentUserAuthStatus !== 'loggedin' ) return false
 
-    if( currentUser._id === currentUser.username ) {
+    if( currentUser._id === currentUser.username && !href.includes('/user/signup/auth-username')) {
       pageToNavigate = '/user/signup/auth-username'
       return false
     }
+
+    return true
   }
 
   return(

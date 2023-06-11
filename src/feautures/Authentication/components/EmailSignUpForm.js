@@ -5,19 +5,19 @@ import {
   StyledSignUpRules,
   StyledSingUpForm 
 } from "./style"
-import {keyInformation} from '../../../../data/keyInformation'
+import {keyInformation} from '../../../data/keyInformation'
 import Error from "./Error"
 import { useContext, useEffect } from "react"
 import Modal from "../../../Modal"
 import { Link, useNavigate } from "react-router-dom"
-import { useCreateProfileMutation, useLoginMutation } from "../../authApiSlice"
+import { useCreateProfileMutation, useLoginMutation } from "../authApiSlice"
 import { toast } from "react-toastify"
-import { processResponse } from "../../../../utils/processResponse"
-import { theme } from "../../../../data/theme"
+import { processResponse } from "../../../utils/processResponse"
+import { theme } from "../../../data/theme"
 import { SignUpFormContext } from ".."
-import { SubmitButton } from "../../../../app/GlobalStyles.style"
+import { SubmitButton } from "../../../app/GlobalStyles.style"
 import { useDispatch } from "react-redux"
-import { setCredentials } from "../../authSlice"
+import { setCredentials } from "../authSlice"
 
 // password rules
 const passwordRules = [
@@ -59,10 +59,10 @@ const EmailForm = () => {
     </StyledSignUpRules>
 
   useEffect(() => {
-    if (isErrorProfileCreation) {
-      const message = errorProfileCreation.status === 'FETCH_ERROR' ?
-        `Error occurred - server down`:
-        'Registration failed. Please try again!'
+    if(isErrorProfileCreation){
+      const message = errorProfileCreation.status === 'FETCH_ERROR' 
+        ? 'Error occurred - server down'
+        : 'Registration failed. Please try again!'
       toast.error(message)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

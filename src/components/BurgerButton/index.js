@@ -1,13 +1,13 @@
-import { useSelector, useDispatch } from "react-redux";
-import { toggle } from "./burgerButtonSlice";
-import Path from "./Path";
-import { StyledBurgerButtonWrapper } from "./style";
+import { useSelector, useDispatch } from "react-redux"
+import { toggle } from "./burgerButtonSlice"
+import Path from "./Path"
+import { StyledBurgerButtonWrapper } from "./style"
 
 const transition = { duration: 0.33 }
 
 const BurgerButton = () => {
-  const isOpen = useSelector(state => state.burgerButton.isOpen);
-  const dispatch = useDispatch();
+  const isOpen = useSelector(state => state.burgerButton.isOpen)
+  const dispatch = useDispatch()
 
   return(
     <StyledBurgerButtonWrapper onClick = { () => dispatch(toggle()) }>
@@ -46,4 +46,4 @@ const BurgerButton = () => {
   )
 }
 
-export default BurgerButton;
+export default BurgerButton

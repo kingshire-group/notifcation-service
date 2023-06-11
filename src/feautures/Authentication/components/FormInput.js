@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { theme } from "../../../../data/theme"
-import { SignUpFormContext } from ".."
+import { SignUpFormContext } from "./Signup"
 
 const FormInput = ({label, onChange, id, ...inputProps}) => {
   const { openModal, open, close } = useContext(SignUpFormContext)

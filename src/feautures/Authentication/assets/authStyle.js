@@ -33,3 +33,9 @@ export const StyledSignUpRules = styled.div`
     margin-bottom: 1rem;
   }
 `
+
+export const StyledUsernameContainer = styled.div`
+  & form, button{
+    margin-top: 4rem;
+  }
+`

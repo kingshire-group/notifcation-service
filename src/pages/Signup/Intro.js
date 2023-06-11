@@ -45,4 +45,4 @@ const SignupIntro = () => {
   )
 }
 
-export default SignupIntro;
+export default SignupIntro

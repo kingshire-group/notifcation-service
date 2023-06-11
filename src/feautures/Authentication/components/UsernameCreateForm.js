@@ -1,16 +1,18 @@
 import { StyledUsernameContainer } from "./style"
 import FormInput from "../Email/FormInput"
 import { useFormik } from "formik"
-import { SubmitButton } from "../../../../app/GlobalStyles.style"
-import { createContext, useContext } from "react"
+import { SubmitButton } from "../../../app/GlobalStyles.style"
+import { useContext } from "react"
 import { StyledSignUpRules } from "../Email/style"
-import { SignUpFormContext } from ".."
+import { SignUpFormContext } from "../../feautures/authentication/components/Signup"
 import Modal from "../../../Modal"
 import Error from "../Email/Error"
 import { usernameSchema } from "./schema"
-import { useCreateUsernameMutation } from "../../authApiSlice"
+import { useUpdateUsernameMutation } from "../authApiSlice"
 import { useNavigate } from "react-router-dom"
-import { processResponse } from "../../../../utils/processResponse"
+import { processResponse } from "../../../utils/processResponse"
+import { toast } from "react-toastify"
+import { useEffect } from "react"
 
 //export const UsernameFormContext = createContext()
  // username rules
@@ -23,8 +25,24 @@ import { processResponse } from "../../../../utils/processResponse"
 const Username = () => {
   const { openModal, close } = useContext(SignUpFormContext)
   const navigate = useNavigate()
-  const [createUsername, { isLoading, isSuccess, error, isError }] =
-    useCreateUsernameMutation()
+  const [updateUsername, { isLoading, isSuccess, error, isError }] =
+    useUpdateUsernameMutation()
+
+  useEffect(() => {
+    if(isSuccess){
+      toast.success('update successful')
+    }
+
+    if(isError){
+      const message = error.status === 'PARSING_ERROR' 
+        ? 'Please login'
+        : 'Username creation failed. Please try again'
+
+      toast.error(message)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading])
+
   const { values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit } = useFormik({
     initialValues: {
       username: ''
@@ -32,18 +50,16 @@ const Username = () => {
     validationSchema: usernameSchema,
     onSubmit: async (values, actions) => {
       try {
-        console.log(values)
-        //const response = await createUsername(values)
-        //const { data, status } = processResponse(response)
-       /*  if(status === 'success') {
+        const response = await updateUsername(values)
+        const { data, status } = processResponse(response)
+
+        if(status === 'PARSING_ERROR'){
+          navigate('/user/login')
+        } else if (status === 'success'){
           actions.setSubmitting(false)
           actions.resetForm()
-          //login user here
-          navigate('/user/signup/auth-username')
+          navigate('/user/signup/completed')
         }
-        else{
-          console.log('Form submission failed')
-        } */
       } catch (error) {
         console.log('Error in submission')
       }

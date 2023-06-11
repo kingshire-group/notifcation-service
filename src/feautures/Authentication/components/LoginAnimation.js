@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 function LoginAnimation() {
   return (
@@ -442,7 +442,7 @@ function LoginAnimation() {
         ></path>
       </g>
     </svg>
-  );
+  )
 }
 
-export default LoginAnimation;
+export default LoginAnimation

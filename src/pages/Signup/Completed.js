@@ -1,7 +1,7 @@
 import React from "react";
 import {StyledSignupCompletion} from './style'
-import {keyInformation} from '../../../data/keyInformation'
-import {Button} from '../../../app/GlobalStyles.style'
+import {keyInformation} from '../../data/keyInformation'
+import {Button} from '../../app/GlobalStyles.style'
 const UnlockedAnimation = React.lazy(() => import('../../Lottie/Unloncked'));
 
 

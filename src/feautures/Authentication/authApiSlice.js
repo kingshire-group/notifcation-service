@@ -9,9 +9,9 @@ export const authApiSlice = apiSlice.injectEndpoints({
 				body: { ...payload }
 			})
 		}),
-		createUsername: builder.mutation({
+		updateUsername: builder.mutation({
 			query: payload => ({
-				url: '/auth/signup/username',
+				url: '/auth/update/username',
 				method: 'Post',
 				body: { ...payload }
 			})
@@ -35,7 +35,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
 
 export const {
 	useCreateProfileMutation,
-	useCreateUsernameMutation,
+	useUpdateUsernameMutation,
 	useGoogleAuthMutation, 
 	useLoginMutation
 } = authApiSlice

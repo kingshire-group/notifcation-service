@@ -100,6 +100,9 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 `
+
+export const AppContainer = styled.div``
+
 export const Button = styled.button`
   border-radius: ${props => props.theme.borderRadius.button};
   font-size: ${props => props.theme.fontSizes.button};

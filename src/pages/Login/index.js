@@ -3,7 +3,6 @@ import { useRef } from "react"
 import Google from "../Google"
 import useResize from "../../../hooks/useResize"
 import LoginAnimation from "./LoginAnimation";
-//import FormInput from "../../Authentication/Email/FormInput";
 import { SubmitButton } from '../../../app/GlobalStyles.style'
 import { StyledLoginPageContainer, StyledLoginForm, StyledLink } from "./style";
 import { keyInformation } from "../../../data/keyInformation";
