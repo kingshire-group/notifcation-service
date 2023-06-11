@@ -11,7 +11,7 @@ import {
 } from './style'
 import HiringSteps from './hiringSteps'
 import { SITE } from '../../data/constants'
-import { Button } from '../temp-styles'
+import { Button } from '../common.style'
 
 const SiteIntroduction = () => {
   const { viewBox, pathData } = SiteIntroductionSVGData

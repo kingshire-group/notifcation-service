@@ -1,7 +1,7 @@
 import SelectedJobsSlideBar from '../components/HorizontalSlideBar/SelectedJobsSlideBar'
 import SiteIntroductionSection from '../components/SiteIntroduction'
-import { StyledHomePageContainer } from './style'
 import TopRatedKinglancers from '../components/TopRatedKinglancers'
+import { StyledHomePageContainer } from './style'
 
 const Home = () => {
   return(

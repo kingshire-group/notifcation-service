@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+
+export const AppContainer = styled.div``
 
 export const StyledHeader = styled.header`
   width: ${ props => props.theme.widths.full };

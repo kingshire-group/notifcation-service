@@ -2,7 +2,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { GlobalStyles } from './GlobalStyles'
 import { ThemeProvider } from 'styled-components'
-import Layout from './Layout'
+import Layout from '../Layout'
 import AppRoutes from '../routes'
 import { theme } from '../data/theme'
 

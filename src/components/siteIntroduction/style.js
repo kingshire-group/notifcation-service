@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { slideFromLeft, slideFromRight } from '../temp-styles'
+import { slideFromLeft, slideFromRight } from '../common.style'
 
 export const StyledSiteIntroduction = styled.div`
   background-color: ${ props => props.theme.colors.backgroundMagniola };

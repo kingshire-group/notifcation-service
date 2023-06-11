@@ -4,7 +4,7 @@ import {
   KinglancerCardDetails
 } from './style'
 import { SITE } from '../../data/constants'
-import { BookButton } from '../temp-styles';
+import { BookButton } from '../common.style';
 import { theme } from '../../data/theme';
 
 const KinglancerCard = ({image}) => {

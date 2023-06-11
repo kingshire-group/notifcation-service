@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import { theme } from '../data/theme'
 
 export const GlobalStyles = createGlobalStyle`
@@ -99,5 +99,3 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 `
-
-export const AppContainer = styled.div``
