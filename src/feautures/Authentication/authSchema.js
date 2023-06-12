@@ -14,7 +14,7 @@ export const loginSchema = yup.object().shape({
     .required('Required')
 })
 
-export const inputSchema = yup.object().shape({
+export const signupSchema = yup.object().shape({
   fullname: yup.string().min(5, 'Must be at least 5 letters').required('Required'),
   email: yup.string().matches(emailMatcher, 'Invalid Email').required('Required'),
   password: yup.string()

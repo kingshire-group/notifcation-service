@@ -1,22 +1,21 @@
-import { StyledUsernameContainer } from "./style"
-import FormInput from "../Email/FormInput"
-import { useFormik } from "formik"
-import { SubmitButton } from "../../../app/GlobalStyles.style"
-import { useContext } from "react"
-import { StyledSignUpRules } from "../Email/style"
-import { SignUpFormContext } from "../../feautures/authentication/components/Signup"
-import Modal from "../../../Modal"
-import Error from "../Email/Error"
-import { usernameSchema } from "./schema"
-import { useUpdateUsernameMutation } from "../authApiSlice"
-import { useNavigate } from "react-router-dom"
-import { processResponse } from "../../../utils/processResponse"
-import { toast } from "react-toastify"
-import { useEffect } from "react"
+import { StyledUsernameContainer } from './style'
+import FormInput from '../Email/FormInput'
+import { useFormik } from 'formik'
+import { SubmitButton } from '../../../app/GlobalStyles.style'
+import { useContext } from 'react'
+import { StyledSignUpRules } from '../Email/style'
+import { SignUpFormContext } from '../../feautures/authentication/components/Signup'
+import Modal from '../../../Modal'
+import Error from '../Email/Error'
+import { usernameSchema } from './schema'
+import { useUpdateUsernameMutation } from '../authApiSlice'
+import { useNavigate } from 'react-router-dom'
+import { processResponse } from '../../../utils/processResponse'
+import { toast } from 'react-toastify'
+import { useEffect } from 'react'
 
-//export const UsernameFormContext = createContext()
- // username rules
- const usernameRules = [
+// username rules
+const usernameRules = [
   'be between 3 to 20 characters',
   'cannot have two repeated underscore or dots at the end',
   'cannot have a dot followed by underscore or vice versa',
@@ -83,7 +82,7 @@ const Username = () => {
     type: 'text',
     placeholder: 'Username',
     name: 'username'
-  };
+  }
 
   return (
     <>
@@ -99,7 +98,7 @@ const Username = () => {
             className={ errors[input.name] && touched[input.name] ? 'input-error' : '' }
           />
           {errors[input.name] && touched[input.name] && <Error errorMessage={errors[input.name]}/>}
-          <SubmitButton type="submit" disabled={isSubmitting}>Submit</SubmitButton>
+          <SubmitButton type='submit' disabled={isSubmitting}>Submit</SubmitButton>
         </form>
       </StyledUsernameContainer>
       { openModal && <Modal handleClose={close} text={usernameRulesModalHtml}/> }
@@ -107,4 +106,4 @@ const Username = () => {
   )
 }
 
-export default Username;
+export default Username

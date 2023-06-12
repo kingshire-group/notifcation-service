@@ -1,21 +1,21 @@
-/* import { useFormik } from "formik";
-import { useRef } from "react"
-import Google from "../Google"
-import useResize from "../../../hooks/useResize"
-import LoginAnimation from "./LoginAnimation";
+import { useFormik } from 'formik'
+import { useRef } from 'react'
+import Google from ''
+import useResize from '../../../hooks/useResize'
+import LoginAnimation from './LoginAnimation'
 import { SubmitButton } from '../../../app/GlobalStyles.style'
-import { StyledLoginPageContainer, StyledLoginForm, StyledLink } from "./style";
-import { keyInformation } from "../../../data/keyInformation";
-import Error from "../Signup/Email/Error";
-import { loginSchema } from "./schema";
-import { useLoginMutation } from "../authApiSlice";
-import { processResponse } from "../../../utils/processResponse";
-import { useEffect } from "react";
-import { toast } from "react-toastify";
+import { StyledLoginPageContainer, StyledLoginForm, StyledLink } from './style'
+import { keyInformation } from '../../../data/keyInformation'
+import Error from '../Signup/Email/Error'
+import { loginSchema } from './schema'
+import { useLoginMutation } from '../authApiSlice'
+import { processResponse } from '../../../utils/processResponse'
+import { useEffect } from 'react'
+import { toast } from 'react-toastify'
 
 const Login = ({height}) => {
-  const loginButtonRef = useRef();
-  const { width: googleButtonWidth } = useResize(loginButtonRef);
+  const loginButtonRef = useRef()
+  const { width: googleButtonWidth } = useResize(loginButtonRef)
 
   const [login, { isLoading, isSuccess, error, isError }] = useLoginMutation()
   const { values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit } = useFormik({
@@ -31,7 +31,7 @@ const Login = ({height}) => {
         const { data, status } = processResponse(response)
         console.log(data)
         console.log(status)
-        * if(status === 'success') {
+        /* if(status === 'success') {
           actions.setSubmitting(false)
           actions.resetForm()
           //login user here
@@ -39,7 +39,7 @@ const Login = ({height}) => {
         }
         else{
           console.log('Form submission failed')
-        } *
+        } */
       } catch (error) {
         console.log('Error in submission')
       }
@@ -79,12 +79,12 @@ const Login = ({height}) => {
   return (
     <StyledLoginPageContainer height={height}>
       <LoginAnimation />
-      <div className="login-section">
+      <div className='login-section'>
         <StyledLoginForm onSubmit= {handleSubmit} autoComplete='off'>
           <h1>Let's get back in... 👋</h1>
-          <div className="LoginInputs">
+          <div className='LoginInputs'>
             {inputs.map(input =>
-              <div className="formInput" key={input.id}>
+              <div className='formInput' key={input.id}>
                 <div>
                   <label>{input.label}</label>
                   <input {...input}
@@ -98,17 +98,17 @@ const Login = ({height}) => {
               </div>
             )}
           </div>
-          <SubmitButton type="submit" ref={loginButtonRef} disabled={isSubmitting}>Login</SubmitButton>
+          <SubmitButton type='submit' ref={loginButtonRef} disabled={isSubmitting}>Login</SubmitButton>
         </StyledLoginForm>
-        <h3 className="horizontal-or-separator">or</h3>
+        <h3 className='horizontal-or-separator'>or</h3>
         <Google googleButtonWidth={googleButtonWidth}/>
-        <div className="other-options">
+        <div className='other-options'>
           <p>New to {keyInformation.siteName}? <StyledLink>Register</StyledLink></p>
-          <StyledLink className="forgot-password">Forgot Password?</StyledLink>
+          <StyledLink className='forgot-password'>Forgot Password?</StyledLink>
         </div>
       </div>
     </StyledLoginPageContainer>
   )
 }
 
-export default Login */
+export default Login

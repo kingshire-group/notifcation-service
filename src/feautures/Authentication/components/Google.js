@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 import { useEffect } from 'react'
 
 const Google = ({googleButtonWidth}) => {
-  const [ googleAuth, { isLoading, isSuccess, error, isError } ] = useGoogleAuthMutation()
+  const [ googleAuth, { isLoading, isSuccess/* , error, isError */ } ] = useGoogleAuthMutation()
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -17,12 +17,12 @@ const Google = ({googleButtonWidth}) => {
       toast.success('signup and login successful')
     }
 
-    if (isError) {
+    /* if (isError) {
       const message = error.status === 'FETCH_ERROR' ?
         `Error occurred - server down`:
         'Login failed. Please try again!'
       toast.error(message)
-    }
+    } */
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading])
 

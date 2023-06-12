@@ -1,6 +1,6 @@
-import { useContext } from "react"
-import { theme } from "../../../../data/theme"
-import { SignUpFormContext } from "./Signup"
+import { useContext } from 'react'
+import { theme } from '../../../data/theme'
+import { SignUpFormContext } from '../../../pages/Signup'
 
 const FormInput = ({label, onChange, id, ...inputProps}) => {
   const { openModal, open, close } = useContext(SignUpFormContext)
@@ -15,7 +15,7 @@ const FormInput = ({label, onChange, id, ...inputProps}) => {
     </label>
   return (
     <>
-      <div className="formInput">
+      <div className='formInput'>
         { labelHtml }
         <input {...inputProps} onChange={onChange}/>
       </div>

@@ -1,16 +1,17 @@
-import useWindowDimensions from '../../../hooks/useWindowDimensions'
+import { useState, useEffect, createContext, useMemo } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import { 
   StyledSingUpContainer 
 }from "./style"
-import { Outlet, useLocation } from 'react-router-dom';
-import { useState, useEffect, createContext, useMemo } from 'react';
-import { theme } from '../../../data/theme';
+import useWindowDimensions from '../hooks/useWindowDimensions'
+import { theme } from '../data/theme'
 
 export const SignUpFormContext = createContext()
+
 const Signup = () => {
-  const {height, } = useWindowDimensions();
-  const [wrapperBackgroundColor, setWrapperBackgroundColor] = useState('white');
-  const location = useLocation();
+  const { height } = useWindowDimensions()
+  const [wrapperBackgroundColor, setWrapperBackgroundColor] = useState('white')
+  const location = useLocation()
   const completedPagePath = '/user/signup/completed'
 
   useEffect(() => {

@@ -40,7 +40,7 @@ export const StyledUsernameContainer = styled.div`
   }
 `
 
-export const StyledSignupIntro = styled.div`
+export const StyledSignupIntroContainer = styled.div`
   & .singup-intro{
     & span{
       font-size:${props => props.theme.fontSizes.mobile};

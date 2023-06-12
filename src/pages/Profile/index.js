@@ -1,15 +1,15 @@
-/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Marquee from "react-fast-marquee";
-import KinglancerProfile from './KinglanceProfile'
-import ClientProfile from './ClientProfile'
-import ProfilePicture from './ProfilePicture';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Marquee from 'react-fast-marquee'
+import KinglancerProfile from '../../feautures/profile/components/KinglanceProfile'
+import ClientProfile from '../../feautures/profile/components/ClientProfile'
+import ProfilePicture from '../../feautures/profile/components/ProfilePicture';
 import { SubmitButton } from '../../app/GlobalStyles.style'
 import { 
   StyledProfileContainer, 
   StyledProfileLowerSection, 
   StyledProfileUpperSection 
-} from "./style";
-import { theme } from '../../data/theme';
+} from "./style"
+import { theme } from '../../data/theme'
 
 const Profile = ({height}) => {
   const bookingNotification = 'New Booking for: Friday, 25th Jan, 2023'
@@ -28,12 +28,12 @@ const Profile = ({height}) => {
       service: 'Hairdresser',
       price:'£60'
     }
-  ];
-  const type = 'client';
-  const rating = 4.1;
-  const totalRating = 23;
-  const totalJobsCompleted = 4;
-  const memberSince = 2021;
+  ]
+  const type = 'client'
+  const rating = 4.1
+  const totalRating = 23
+  const totalJobsCompleted = 4
+  const memberSince = 2021
 
   const services = listOfServices.map((element, index) => 
     <li key={index+1}>
@@ -46,8 +46,8 @@ const Profile = ({height}) => {
   return(
     <StyledProfileContainer height={height}>
       <StyledProfileUpperSection>
-        <div className="upper-section-wrapper">
-          <div className="page-title-and-navigation">
+        <div className='upper-section-wrapper'>
+          <div className='page-title-and-navigation'>
             <FontAwesomeIcon icon={['far', 'circle-left']} className='faIcon'/>
             <h1>Your Profile</h1>
             <FontAwesomeIcon icon={'ellipsis'} className='faIcon'/>
@@ -57,7 +57,7 @@ const Profile = ({height}) => {
               {bookingNotification}
             </span>
           </Marquee>
-          <div className="personal-information">
+          <div className='personal-information'>
             <ProfilePicture />
             <div className='basic-information'>
               <section className='names'>
@@ -74,7 +74,7 @@ const Profile = ({height}) => {
         </div>
       </StyledProfileUpperSection>
       <StyledProfileLowerSection >
-        <div className="lower-section-wrapper">
+        <div className='lower-section-wrapper'>
           { type === 'kinglancer' ? 
             <KinglancerProfile 
               rating={rating} 
@@ -88,7 +88,6 @@ const Profile = ({height}) => {
       </StyledProfileLowerSection>
     </StyledProfileContainer>
   )
-
 }
 
-export default Profile; */
+export default Profile

@@ -1,23 +1,26 @@
-import { useFormik } from "formik"
-import FormInput from "./FormInput"
-import { inputSchema } from './schema'
+import { useContext, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { toast } from 'react-toastify'
+import { useFormik } from 'formik'
+import FormError from './FormError'
+import FormInput from './FormInput'
+import { SignUpFormContext } from '../../../pages/Signup'
+import { setCredentials } from '../authSlice'
+import { signupSchema } from '../authSchema'
 import { 
   StyledSignUpRules,
   StyledSingUpForm 
-} from "./style"
-import {keyInformation} from '../../../data/keyInformation'
-import Error from "./Error"
-import { useContext, useEffect } from "react"
-import Modal from "../../../Modal"
-import { Link, useNavigate } from "react-router-dom"
-import { useCreateProfileMutation, useLoginMutation } from "../authApiSlice"
-import { toast } from "react-toastify"
-import { processResponse } from "../../../utils/processResponse"
-import { theme } from "../../../data/theme"
-import { SignUpFormContext } from ".."
-import { SubmitButton } from "../../../app/GlobalStyles.style"
-import { useDispatch } from "react-redux"
-import { setCredentials } from "../authSlice"
+} from '../assets/authStyle'
+import {
+  useCreateProfileMutation,
+  useLoginMutation
+} from '../authApiSlice'
+import { theme } from '../../../data/theme'
+import { SITE } from '../../../data/constants'
+import Modal from '../../../components/Modal'
+import { SubmitButton } from '../../../components/common.style'
+import { processResponse } from '../../../utils/processResponse'
 
 // password rules
 const passwordRules = [
@@ -27,7 +30,7 @@ const passwordRules = [
   'be a minimum of 8 characters'
 ]
 
-const EmailForm = () => {
+const EmailSignupForm = () => {
   const { openModal, close } = useContext(SignUpFormContext)
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -90,7 +93,7 @@ const EmailForm = () => {
       password: '',
       confirmpassword: '',
     },
-    validationSchema: inputSchema,
+    validationSchema: signupSchema,
     onSubmit: async (values, actions) => {
       try {
         const responseForProfileCreation = await createProfile(values)
@@ -106,7 +109,7 @@ const EmailForm = () => {
           const { data, status: loginStatus } = processResponse(responseForUserLogin)
           if(loginStatus === 'success'){
             dispatch(setCredentials(data))
-            navigate(`/user-profile/${data.user.username}`)
+            navigate(`/user/${data.user.username}`)
           }
         }
         else{
@@ -152,10 +155,10 @@ const EmailForm = () => {
   return (
     <>
       <StyledSingUpForm onSubmit= {handleSubmit} autoComplete='off'>
-        <div className="form-title">
+        <div className='form-title'>
           <h1>Let's fill this in... ✍📝</h1>
           <span style={{opacity: 0.5}}>
-            In order to kick off your journey with {keyInformation.siteName}, 
+            In order to kick off your journey with {SITE.name}, 
             please complete the form below
           </span>
         </div>
@@ -167,19 +170,19 @@ const EmailForm = () => {
               onBlur={handleBlur}
               className={ errors[input.name] && touched[input.name] ? 'input-error' : '' }
             />
-            {errors[input.name] && touched[input.name] && <Error errorMessage={errors[input.name]}/>}
+            {errors[input.name] && touched[input.name] && <FormError errorMessage={errors[input.name]}/>}
           </div>
         )}
         <p>Already have an account?<span> </span>
-          <Link style={{color: theme.colors.blue, fontStyle: "italic"}}>
+          <Link style={{color: theme.colors.blue, fontStyle: 'italic'}}>
             Login
           </Link>
         </p>
-        <SubmitButton type="submit" disabled={isSubmitting}>Submit</SubmitButton>
+        <SubmitButton type='submit' disabled={isSubmitting}>Submit</SubmitButton>
       </StyledSingUpForm>
       { openModal && <Modal handleClose={close} text={passwordRulesModalHtml}/> }
     </> 
   )
 }
 
-export default EmailForm
+export default EmailSignupForm

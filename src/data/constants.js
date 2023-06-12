@@ -1,3 +1,7 @@
+import { PATH_TO_LOGIN, PATH_TO_SIGNUP } from "../feautures/authentication"
+
+export const PATH_TO_HOME = '/'
+
 export const DEVICE_SIZES = {
   mobile: 768,
   tablet: 992,
@@ -6,20 +10,20 @@ export const DEVICE_SIZES = {
 }
 
 export const SITE = {
-  siteName: 'kingsHire',
-  siteUrl: 'http://localhost:3500',
+  name: 'kingsHire',
+  URL: 'http://localhost:3500',
   workerTitle: 'Kinglancer',
   workersTitle: 'Kinglancers'
 }
 
 export const MENU_OPTIONS = [
-  { name: 'Home', id: 1, pathExtensionOf: 'index' },
-  { name: 'Signup', id: 2, pathExtensionOf: 'user' },
-  { name: 'Login', id: 3, pathExtensionOf: 'user' },
-  { name: 'Logout', id: 4, pathExtensionOf: 'user' },
-  { name: 'Switch to Client', id: 5, pathExtensionOf: 'user' },
-  { name: 'Switch to Worker', id: 6, pathExtensionOf: 'user' },
-  { name: 'Become a Client', id: 7, pathExtensionOf: 'user' },
+  { name: 'Home', id: 1, path: PATH_TO_HOME },
+  { name: 'Signup', id: 2, path: `/${PATH_TO_SIGNUP}` },
+  { name: 'Login', id: 3, path: `/${PATH_TO_LOGIN}` },
+  { name: 'Logout', id: 4, path: 'user' },
+  { name: 'Switch to Client', id: 5, path: 'user' },
+  { name: 'Switch to Worker', id: 6, path: 'user' },
+  { name: 'Become a Client', id: 7, path: 'user' },
 ]
 
 export const SELECTED_JOBS = [

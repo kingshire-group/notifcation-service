@@ -28,7 +28,7 @@ const SiteIntroduction = () => {
     />)
 
   var siteIntroductionMessageToDisplay_header = `Are you looking to hire ${SITE.workersTitle}?`
-  var siteIntroductionMessageToDisplay_paragraph = `Hire Excellent ${SITE.workersTitle}, Fast. ${SITE.siteName} helps you hire elite ${SITE.workersTitle} around the world with ease.`
+  var siteIntroductionMessageToDisplay_paragraph = `Hire Excellent ${SITE.workersTitle}, Fast. ${SITE.name} helps you hire elite ${SITE.workersTitle} around the world with ease.`
   const hireWorker = `Hire a ${SITE.workerTitle}`
 
   return(
