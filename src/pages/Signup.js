@@ -1,4 +1,4 @@
-/* import useWindowDimensions from '../../../hooks/useWindowDimensions'
+import useWindowDimensions from '../../../hooks/useWindowDimensions'
 import { 
   StyledSingUpContainer 
 }from "./style"
@@ -7,7 +7,7 @@ import { useState, useEffect, createContext, useMemo } from 'react';
 import { theme } from '../../../data/theme';
 
 export const SignUpFormContext = createContext()
-const SignupLayout = () => {
+const Signup = () => {
   const {height, } = useWindowDimensions();
   const [wrapperBackgroundColor, setWrapperBackgroundColor] = useState('white');
   const location = useLocation();
@@ -40,4 +40,4 @@ const SignupLayout = () => {
   )
 }
 
-export default SignupLayout; */
+export default Signup

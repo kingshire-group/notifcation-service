@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom'
 import {
   selectCurrentAuthStatus,
   selectCurrentUser
-} from '../feautures/authentication/authSlice'
+} from '../authSlice'
 
 const ProtectedRoutes = () => {
   const href = window.location.href
