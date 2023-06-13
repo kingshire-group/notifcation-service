@@ -47,4 +47,4 @@ library.add(
   farCalendar,
   farRectangleList,
   farImages
-);
+)

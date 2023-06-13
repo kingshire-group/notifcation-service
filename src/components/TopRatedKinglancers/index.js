@@ -38,4 +38,4 @@ const TopRatedKinglancers = () => {
   )
 }
 
-export default TopRatedKinglancers;
+export default TopRatedKinglancers

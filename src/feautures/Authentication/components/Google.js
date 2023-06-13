@@ -58,4 +58,4 @@ const Google = ({googleButtonWidth}) => {
   )
 }
 
-export default Google;
+export default Google

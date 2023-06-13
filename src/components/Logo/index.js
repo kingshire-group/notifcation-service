@@ -1,5 +1,5 @@
-import { StyledLogo } from "./style";
-import KingsHireLogo from "../../assets/images/kingshireLogo.png"
+import { StyledLogo } from './style';
+import KingsHireLogo from '../../assets/images/kingshireLogo.png'
 
 const Logo = () => {
   return(
@@ -9,4 +9,4 @@ const Logo = () => {
   )
 }
 
-export default Logo;
+export default Logo
