@@ -3,11 +3,9 @@ import SignupIntro from '../components/SignupIntro'
 import Signup from '../../../pages/Signup'
 import EmailSignupForm from '../components/EmailSignupForm'
 import { SIGNUP_PATHS } from '../data/paths'
-
-/* import Username from "./Username" */
-/* import SignupCompleted from './components/Signup/SignupCompleted'
+import UsernameCreationForm from '../components/UsernameCreationForm'
 import ProtectedRoutes from './ProtectedRoutes'
- */
+import SignupCompleted from '../components/SignupCompleted'
 
 const SignupRoutes = () => {
   return(
@@ -15,11 +13,10 @@ const SignupRoutes = () => {
       <Route path={SIGNUP_PATHS.INTRO} element={<Signup />}>
         <Route index element={<SignupIntro />}/>
         <Route path={SIGNUP_PATHS.EMAIL} element={<EmailSignupForm />}/>
-
-        {/* <Route element={<ProtectedRoutes />}>
-          <Route path='/auth-username' element={<Username />}/>
-          <Route path='/completed' element={<SignupCompleted />}/>
-        </Route> */}
+        <Route element={<ProtectedRoutes />}>
+          <Route path={SIGNUP_PATHS.USERNAME} element={<UsernameCreationForm />}/>
+          <Route path={SIGNUP_PATHS.COMPLETED} element={<SignupCompleted />}/>
+        </Route>
         
       </Route>
     </Routes>

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const StyledHomePageContainer = styled.div``
+export const StyledHomePageContainer = styled.div`
+
+`
 
 export const StyledSingUpContainer = styled.div`
   display: flex;
@@ -21,5 +23,17 @@ export const StyledSingUpContainer = styled.div`
       font-size:${props => props.theme.fontSizes.mobile};
       text-align: center;
     }
+  }
+`
+
+export const StyledLoginPageContainer = styled.div`
+  height: calc(${props => props.height}px - ${props => props.theme.heights.header});
+  display: grid;
+  grid-template-rows: 40% 55%;
+  row-gap: 5%;
+
+  & svg{
+    height: 100%;
+    margin: auto;
   }
 `

@@ -3,5 +3,7 @@ export const LOGIN_PATH = '/login'
 
 export const SIGNUP_PATHS = {
   INTRO: '/',
-  EMAIL: '/email'
+  EMAIL: '/email',
+  USERNAME: '/username',
+  COMPLETED: '/completed'
 }

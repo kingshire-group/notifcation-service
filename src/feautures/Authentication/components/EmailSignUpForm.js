@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
 import { useFormik } from 'formik'
-import FormError from './FormError'
 import FormInput from './FormInput'
-import { SignUpFormContext } from '../../../pages/Signup'
+import SignupPasswordInput from './SignupPasswordInput'
 import { setCredentials } from '../authSlice'
 import { signupSchema } from '../authSchema'
+import { signupFormInputs } from '../data/formInputs'
 import { 
-  StyledSignUpRules,
+  StyledSignupRules,
   StyledSingUpForm 
 } from '../assets/authStyle'
 import {
@@ -20,9 +20,9 @@ import { theme } from '../../../data/theme'
 import { SITE } from '../../../data/constants'
 import Modal from '../../../components/Modal'
 import { SubmitButton } from '../../../components/common.style'
+import { SignupFormContext } from '../../../pages/Signup'
 import { processResponse } from '../../../utils/processResponse'
 
-// password rules
 const passwordRules = [
   'have at least one upper and lower case letter',
   'have at least one digit',
@@ -31,7 +31,7 @@ const passwordRules = [
 ]
 
 const EmailSignupForm = () => {
-  const { openModal, close } = useContext(SignUpFormContext)
+  const { openModal, close } = useContext(SignupFormContext)
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -48,18 +48,6 @@ const EmailSignupForm = () => {
     error: errorLogin,
     isError: isErrorLogin
   }] = useLoginMutation()
-
-  const passwordRulesModalHtml = 
-    <StyledSignUpRules>
-      <span onClick={close}>✖</span>
-      <ul>
-      {passwordRules.map((rule, index) =>
-        <li key={index}>
-          {rule}
-        </li>
-      )}
-      </ul>
-    </StyledSignUpRules>
 
   useEffect(() => {
     if(isErrorProfileCreation){
@@ -121,36 +109,33 @@ const EmailSignupForm = () => {
     }
   })
 
-  const inputs = [
-    {
-      id: 1,
-      label: 'Full Name',
-      type: 'text',
-      placeholder: 'Full Name',
-      name: 'fullname'
-    },
-    {
-      id: 2,
-      label: 'Email',
-      type: 'email',
-      placeholder: 'Email',
-      name: 'email'
-    },
-    {
-      id: 3,
-      label: 'Password',
-      type: 'password',
-      placeholder: 'Password',
-      name: 'password'
-    },
-    {
-      id: 4,
-      label: 'Confirm Password',
-      type: 'password',
-      placeholder: 'Confirm Password',
-      name: 'confirmpassword'
-    }
-  ]
+  const passwordRulesModalHtml = 
+    <StyledSignupRules>
+      <span onClick={close}>✖</span>
+      <ul>
+      {passwordRules.map((rule, index) =>
+        <li key={index}>
+          {rule}
+        </li>
+      )}
+      </ul>
+    </StyledSignupRules>
+
+  const signupPassowrdInput = input =>
+    <SignupPasswordInput key={input.id} {...input} 
+      value={values[input.name]} 
+      onChange={handleChange}
+      onBlur={handleBlur}
+      className={ errors[input.name] && touched[input.name] ? 'input-error' : '' }
+    />
+
+  const formInput = input =>
+    <FormInput key={input.id} {...input} 
+      value={values[input.name]} 
+      onChange={handleChange}
+      onBlur={handleBlur}
+      className={ errors[input.name] && touched[input.name] ? 'input-error' : '' }
+    />
 
   return (
     <>
@@ -162,15 +147,9 @@ const EmailSignupForm = () => {
             please complete the form below
           </span>
         </div>
-        {inputs.map(input => 
+        {signupFormInputs.map(input =>
           <div key={input.id} className='form-input-container'>
-            <FormInput key={input.id} {...input} 
-              value={values[input.name]} 
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={ errors[input.name] && touched[input.name] ? 'input-error' : '' }
-            />
-            {errors[input.name] && touched[input.name] && <FormError errorMessage={errors[input.name]}/>}
+            {input.label === 'Password' ? signupPassowrdInput(input) : formInput(input)}
           </div>
         )}
         <p>Already have an account?<span> </span>

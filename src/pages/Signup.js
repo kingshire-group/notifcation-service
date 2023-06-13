@@ -6,7 +6,7 @@ import {
 import useWindowDimensions from '../hooks/useWindowDimensions'
 import { theme } from '../data/theme'
 
-export const SignUpFormContext = createContext()
+export const SignupFormContext = createContext()
 
 const Signup = () => {
   const { height } = useWindowDimensions()
@@ -29,7 +29,7 @@ const Signup = () => {
   const open = () => setOpenModal(true)
 
   return(
-    <SignUpFormContext.Provider value={ {open, close,...providerValue} }>
+    <SignupFormContext.Provider value={ {open, close,...providerValue} }>
       <StyledSingUpContainer height={height}>
         <div className='signup-wrapper' 
           style={{ backgroundColor: wrapperBackgroundColor }}
@@ -37,7 +37,7 @@ const Signup = () => {
           <Outlet />
         </div>
       </StyledSingUpContainer>
-    </SignUpFormContext.Provider>
+    </SignupFormContext.Provider>
   )
 }
 

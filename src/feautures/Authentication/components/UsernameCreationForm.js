@@ -1,18 +1,17 @@
-import { StyledUsernameContainer } from './style'
-import FormInput from '../Email/FormInput'
+import { StyledSignupRules, StyledUsernameContainer } from '../assets/authStyle'
+import FormInput from './FormInput'
 import { useFormik } from 'formik'
-import { SubmitButton } from '../../../app/GlobalStyles.style'
+import { SubmitButton } from '../../../components/common.style'
 import { useContext } from 'react'
-import { StyledSignUpRules } from '../Email/style'
-import { SignUpFormContext } from '../../feautures/authentication/components/Signup'
-import Modal from '../../../Modal'
-import Error from '../Email/Error'
-import { usernameSchema } from './schema'
 import { useUpdateUsernameMutation } from '../authApiSlice'
 import { useNavigate } from 'react-router-dom'
 import { processResponse } from '../../../utils/processResponse'
 import { toast } from 'react-toastify'
 import { useEffect } from 'react'
+import { SignupFormContext } from '../../../pages/Signup'
+import Modal from '../../../components/Modal'
+import FormError from './FormError'
+import { usernameSchema } from '../authSchema'
 
 // username rules
 const usernameRules = [
@@ -21,8 +20,8 @@ const usernameRules = [
   'cannot have a dot followed by underscore or vice versa',
 ]
 
-const Username = () => {
-  const { openModal, close } = useContext(SignUpFormContext)
+const UsernameCreationForm = () => {
+  const { openModal, close } = useContext(SignupFormContext)
   const navigate = useNavigate()
   const [updateUsername, { isLoading, isSuccess, error, isError }] =
     useUpdateUsernameMutation()
@@ -50,7 +49,7 @@ const Username = () => {
     onSubmit: async (values, actions) => {
       try {
         const response = await updateUsername(values)
-        const { data, status } = processResponse(response)
+        const { status } = processResponse(response)
 
         if(status === 'PARSING_ERROR'){
           navigate('/user/login')
@@ -66,7 +65,7 @@ const Username = () => {
   })
 
   const usernameRulesModalHtml = 
-    <StyledSignUpRules>
+    <StyledSignupRules>
       <span onClick={close}>✖</span>
       <ul>
       {usernameRules.map((rule, index) =>
@@ -75,7 +74,7 @@ const Username = () => {
         </li>
       )}
       </ul>
-    </StyledSignUpRules>
+    </StyledSignupRules>
 
   const input = {
     label: 'Username',
@@ -97,7 +96,7 @@ const Username = () => {
             onBlur={handleBlur}
             className={ errors[input.name] && touched[input.name] ? 'input-error' : '' }
           />
-          {errors[input.name] && touched[input.name] && <Error errorMessage={errors[input.name]}/>}
+          {errors[input.name] && touched[input.name] && <FormError errorMessage={errors[input.name]}/>}
           <SubmitButton type='submit' disabled={isSubmitting}>Submit</SubmitButton>
         </form>
       </StyledUsernameContainer>
@@ -106,4 +105,4 @@ const Username = () => {
   )
 }
 
-export default Username
+export default UsernameCreationForm

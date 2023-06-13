@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Google from './Google'
 import { LOGIN_PATH, SIGNUP_PATH, SIGNUP_PATHS } from '../data/paths'
 import { StyledSignupIntroContainer } from '../assets/authStyle'
-import useResize from '../../../hooks/useResize'
+import useResize from '../hooks/useResize'
 import { SITE } from '../../../data/constants'
 import { Button, StyledLink } from '../../../components/common.style'
 
