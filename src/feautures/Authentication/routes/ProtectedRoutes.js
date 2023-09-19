@@ -8,7 +8,6 @@ import { SIGNUP_PATHS } from '../data/paths'
 import { PATH_TO_LOGIN, PATH_TO_SIGNUP } from '..'
 
 const ProtectedRoutes = () => {
-  console.log(PATH_TO_LOGIN)
   const href = window.location.href
   const loginPath = `/${PATH_TO_LOGIN}`
   const userCreationPath = `${PATH_TO_SIGNUP}${SIGNUP_PATHS.USERNAME}`

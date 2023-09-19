@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Marquee from 'react-fast-marquee'
-import KinglancerProfile from '../../feautures/profile/components/KinglanceProfile'
-import ClientProfile from '../../feautures/profile/components/ClientProfile'
+/* import KinglancerProfile from '../../feautures/profile/components/KinglanceProfile'
+import ClientProfile from '../../feautures/profile/components/ClientProfile' */
 import ProfilePicture from '../../feautures/profile/components/ProfilePicture';
 import { SubmitButton } from '../../app/GlobalStyles.style'
 import { 
@@ -74,7 +74,7 @@ const Profile = ({height}) => {
         </div>
       </StyledProfileUpperSection>
       <StyledProfileLowerSection >
-        <div className='lower-section-wrapper'>
+       {/*  <div className='lower-section-wrapper'>
           { type === 'kinglancer' ? 
             <KinglancerProfile 
               rating={rating} 
@@ -84,7 +84,7 @@ const Profile = ({height}) => {
             /> : 
             <ClientProfile />
           }
-        </div>
+        </div> */}
       </StyledProfileLowerSection>
     </StyledProfileContainer>
   )

@@ -12,6 +12,7 @@ import { SignupFormContext } from '../../../pages/Signup'
 import Modal from '../../../components/Modal'
 import FormError from './FormError'
 import { usernameSchema } from '../authSchema'
+import { SIGNUP_PATH, SIGNUP_PATHS } from '../data/paths'
 
 // username rules
 const usernameRules = [
@@ -56,7 +57,7 @@ const UsernameCreationForm = () => {
         } else if (status === 'success'){
           actions.setSubmitting(false)
           actions.resetForm()
-          navigate('/user/signup/completed')
+          navigate(`${SIGNUP_PATH}${SIGNUP_PATHS.COMPLETED}`)
         }
       } catch (error) {
         console.log('Error in submission')

@@ -1,4 +1,4 @@
-/* import SingleBooking from "./SingleBooking";
+import SingleBooking from "./SingleBooking"
 import { StyledListOfBookings } from "./style"
 
 const ListOfBookings = () => {
@@ -14,4 +14,4 @@ const ListOfBookings = () => {
   )
 }
 
-export default ListOfBookings; */
+export default ListOfBookings

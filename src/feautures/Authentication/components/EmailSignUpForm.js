@@ -22,6 +22,8 @@ import Modal from '../../../components/Modal'
 import { SubmitButton } from '../../../components/common.style'
 import { SignupFormContext } from '../../../pages/Signup'
 import { processResponse } from '../../../utils/processResponse'
+import FormError from './FormError'
+import { SIGNUP_PATH, SIGNUP_PATHS } from '../data/paths'
 
 const passwordRules = [
   'have at least one upper and lower case letter',
@@ -97,7 +99,7 @@ const EmailSignupForm = () => {
           const { data, status: loginStatus } = processResponse(responseForUserLogin)
           if(loginStatus === 'success'){
             dispatch(setCredentials(data))
-            navigate(`/user/${data.user.username}`)
+            navigate(`${SIGNUP_PATH}${SIGNUP_PATHS.USERNAME}`)
           }
         }
         else{
@@ -150,6 +152,7 @@ const EmailSignupForm = () => {
         {signupFormInputs.map(input =>
           <div key={input.id} className='form-input-container'>
             {input.label === 'Password' ? signupPassowrdInput(input) : formInput(input)}
+            {errors[input.name] && touched[input.name] && <FormError errorMessage={errors[input.name]}/>}
           </div>
         )}
         <p>Already have an account?<span> </span>

@@ -1,4 +1,4 @@
-/* import { useState, Fragment } from 'react'
+import { useState, Fragment } from 'react'
 import { Listbox } from '@headlessui/react'
 import { StyledClientProfileContainer } from './style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,11 +12,11 @@ const status = [
 
 const ClientProfile = () => {
   const [selectedStatus, setSelectedStatus] = useState(status[0])
-  const [listBoxPosition, setListBoxPosition] = useState('up');
+  const [listBoxPosition, setListBoxPosition] = useState('up')
 
   const toggleArrowIcon = () => {
-    const newPosition = listBoxPosition === 'up' ? 'down': 'up';
-    setListBoxPosition(newPosition);
+    const newPosition = listBoxPosition === 'up' ? 'down': 'up'
+    setListBoxPosition(newPosition)
   }
 
   return (
@@ -57,4 +57,4 @@ const ClientProfile = () => {
   )
 }
 
-export default ClientProfile; */
+export default ClientProfile
