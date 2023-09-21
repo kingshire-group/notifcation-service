@@ -1,15 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Marquee from 'react-fast-marquee'
-/* import KinglancerProfile from '../../feautures/profile/components/KinglanceProfile'
-import ClientProfile from '../../feautures/profile/components/ClientProfile' */
-import ProfilePicture from '../../feautures/profile/components/ProfilePicture';
-import { SubmitButton } from '../../app/GlobalStyles.style'
+import KinglancerProfile from '../feautures/profile/components/KinglanceProfile'
+import ClientProfile from '../feautures/profile/components/ClientProfile'
+import ProfilePicture from '../feautures/profile/components/ProfilePicture';
+import { SubmitButton } from '../components/common.style'
 import { 
   StyledProfileContainer, 
   StyledProfileLowerSection, 
   StyledProfileUpperSection 
-} from "./style"
-import { theme } from '../../data/theme'
+} from "../feautures/profile/assets/styles/profileStyle"
+import { theme } from '../data/theme'
 
 const Profile = ({height}) => {
   const bookingNotification = 'New Booking for: Friday, 25th Jan, 2023'
@@ -29,7 +29,7 @@ const Profile = ({height}) => {
       price:'£60'
     }
   ]
-  const type = 'client'
+  const type = 'kinglancer'
   const rating = 4.1
   const totalRating = 23
   const totalJobsCompleted = 4
@@ -74,7 +74,7 @@ const Profile = ({height}) => {
         </div>
       </StyledProfileUpperSection>
       <StyledProfileLowerSection >
-       {/*  <div className='lower-section-wrapper'>
+        <div className='lower-section-wrapper'>
           { type === 'kinglancer' ? 
             <KinglancerProfile 
               rating={rating} 
@@ -84,7 +84,7 @@ const Profile = ({height}) => {
             /> : 
             <ClientProfile />
           }
-        </div> */}
+        </div>
       </StyledProfileLowerSection>
     </StyledProfileContainer>
   )

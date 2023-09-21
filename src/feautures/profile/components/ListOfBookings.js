@@ -1,5 +1,5 @@
 import SingleBooking from "./SingleBooking"
-import { StyledListOfBookings } from "./style"
+import { StyledListOfBookings } from "../assets/styles/profileStyle"
 
 const ListOfBookings = () => {
   return (

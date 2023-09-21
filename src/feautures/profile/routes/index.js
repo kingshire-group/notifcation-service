@@ -1,9 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { USER_PATHS } from '../data/paths'
-import Profile from '../../../pages/Signup'
-import SignupIntro from '../../authentication/components/SignupIntro'
-import EmailSignupForm from '../../authentication/components/EmailSignupForm'
-import { SIGNUP_PATHS } from '../../authentication/data/paths'
+import Profile from '../../../pages/Profile'
 
 const UserRoutes = () => {
   return(

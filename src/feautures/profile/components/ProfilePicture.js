@@ -1,5 +1,5 @@
-import personalImage from '../../assets/images/timothyKinglancer.jpg'
-import { StyledPersonalImageContainer } from './style'
+import personalImage from '../assets/photos/timothyKinglancer.jpg'
+import { StyledPersonalImageContainer } from '../assets/styles/profileStyle'
 
 const ProfilePicture = () => {
   return (

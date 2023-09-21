@@ -1,4 +1,4 @@
-import { StyledKinglancerProfile } from "./style"
+import { StyledKinglancerProfile } from "../assets/styles/profileStyle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const KinglanceProfile = (

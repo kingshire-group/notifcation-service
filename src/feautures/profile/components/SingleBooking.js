@@ -1,5 +1,5 @@
-import { StyledSingleBooking } from "./style"
-import {Button} from '../../app/GlobalStyles.style'
+import { StyledSingleBooking } from "../assets/styles/profileStyle"
+import {Button} from '../../../components/common.style'
 const SingleBooking= () => {
   const projectTitle = 'Squote Website re-design project review'
   const projectDueDate = '17 Oct 22'

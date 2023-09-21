@@ -1,6 +1,6 @@
 import { useState, Fragment } from 'react'
 import { Listbox } from '@headlessui/react'
-import { StyledClientProfileContainer } from './style'
+import { StyledClientProfileContainer } from '../assets/styles/profileStyle'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ListOfBookings from './ListOfBookings'
 
