@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: . # Path to your application's Dockerfile
+    ports:
+      - "9000:3000" # Map the app's port to host
+    depends_on:
+      - mongodb
+      - rabbitmq
+    env_file:
+      - ./secrets/.env.dev.db
+      - ./secrets/.env.dev
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017" # Map MongoDB port to host
+    env_file:
+      - ./secrets/.env.dev.db
+    volumes:
+      - mongodb_data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: noti_rabbitmq
+    ports:
+      - "5672:5672" # RabbitMQ default port
+      - "15672:15672" # RabbitMQ management interface port
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq # Change to your desired RabbitMQ username
+      RABBITMQ_DEFAULT_PASS: rabbitmq # Change to your desired RabbitMQ password
+
+volumes:
+  mongodb_data:
